@@ -111,8 +111,8 @@ public static class ChatHelpers
         var executionSettings = new AzureOpenAIPromptExecutionSettings
         {
 
-            Temperature = 0.1,
-            TopP = 0.2,
+            
+            
             ResponseFormat = outputFormatType
 
         };
