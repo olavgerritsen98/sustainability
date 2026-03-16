@@ -1,0 +1,33 @@
+{
+    "schema": 1,
+    "description": "Classifies a conversation into a predefined category and provides a reason for the classification.",
+    "execution_settings": {
+        "default": {
+            "max_tokens": 1000,
+            "temperature": 0.3,
+            "top_p": 0.9,
+            "presence_penalty": 0.0,
+            "frequency_penalty": 0.0
+        }
+    },
+    "input_variables": [
+        {
+            "name": "categories",
+            "description": "The list of categories to classify the conversation into.",
+            "default": "",
+            "is_required": true
+        },
+        {
+            "name": "additionalInformation",
+            "description": "Additional context or instructions to assist in the classification.",
+            "default": "",
+            "is_required": false
+        },
+        {
+            "name": "conversation",
+            "description": "The conversation text to classify.",
+            "default": "",
+            "is_required": true
+        }
+    ]
+}

@@ -1,0 +1,1945 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GenAiIncubator.LlmUtils.Core</name>
+    </assembly>
+    <members>
+        <member name="T:GenAiIncubator.LlmUtils.Core.Enums.DocumentTypesEnum">
+            <summary>
+            Represents the different types of documents that can be classified.
+            </summary>
+        </member>
+        <member name="F:GenAiIncubator.LlmUtils.Core.Enums.DocumentTypesEnum.ID">
+            <summary>
+            Represents an identification document.
+            </summary>
+        </member>
+        <member name="F:GenAiIncubator.LlmUtils.Core.Enums.DocumentTypesEnum.DriversLicense">
+            <summary>
+            Represents a driver's license document.
+            </summary>
+        </member>
+        <member name="F:GenAiIncubator.LlmUtils.Core.Enums.DocumentTypesEnum.Passport">
+            <summary>
+            Represents a passport document.
+            </summary>
+        </member>
+        <member name="F:GenAiIncubator.LlmUtils.Core.Enums.DocumentTypesEnum.DebtOrFinancialAssistance">
+            <summary>
+            Represents a financial assistance power of attorney or order.
+            </summary>
+        </member>
+        <member name="F:GenAiIncubator.LlmUtils.Core.Enums.DocumentTypesEnum.Unknown">
+            <summary>
+            Represents an unknown document type.
+            </summary>
+        </member>
+        <member name="T:GenAiIncubator.LlmUtils.Core.Enums.HeaterTypesEnum">
+            <summary>
+            Represents the different types of heating systems.
+            </summary>
+        </member>
+        <member name="F:GenAiIncubator.LlmUtils.Core.Enums.HeaterTypesEnum.CVKetel">
+            <summary>
+            Central heating boiler.
+            </summary>
+        </member>
+        <member name="F:GenAiIncubator.LlmUtils.Core.Enums.HeaterTypesEnum.HybridHeatPump">
+            <summary>
+            Hybrid heat pump.
+            </summary>
+        </member>
+        <member name="F:GenAiIncubator.LlmUtils.Core.Enums.HeaterTypesEnum.FullElectricHeatPump">
+            <summary>
+            Fully electric heat pump.
+            </summary>
+        </member>
+        <member name="F:GenAiIncubator.LlmUtils.Core.Enums.HeaterTypesEnum.AirHeating">
+            <summary>
+            Air heating system.
+            </summary>
+        </member>
+        <member name="F:GenAiIncubator.LlmUtils.Core.Enums.HeaterTypesEnum.AirConditioning">
+            <summary>
+            Air heating system.
+            </summary>
+        </member>
+        <member name="F:GenAiIncubator.LlmUtils.Core.Enums.HeaterTypesEnum.CityHeat">
+            <summary>
+            City heating system.
+            </summary>
+        </member>
+        <member name="F:GenAiIncubator.LlmUtils.Core.Enums.HeaterTypesEnum.SharedHeating">
+            <summary>
+            Shared heating system.
+            </summary>
+        </member>
+        <member name="F:GenAiIncubator.LlmUtils.Core.Enums.HeaterTypesEnum.OwnHeatSource">
+            <summary>
+            Shared heating system.
+            </summary>
+        </member>
+        <member name="F:GenAiIncubator.LlmUtils.Core.Enums.HeaterTypesEnum.OtherHeatingSetup">
+            <summary>
+            Other heating setup.
+            </summary>
+        </member>
+        <member name="F:GenAiIncubator.LlmUtils.Core.Enums.HeaterTypesEnum.Unknown">
+            <summary>
+            Unknown heating system.
+            </summary>
+        </member>
+        <member name="T:GenAiIncubator.LlmUtils.Core.Enums.PluginNamesEnum">
+            <summary>
+            Enum representing the names of various plugins.
+            </summary>
+        </member>
+        <member name="F:GenAiIncubator.LlmUtils.Core.Enums.PluginNamesEnum.PIIRemoval">
+            <summary>
+            Plugin for removing Personally Identifiable Information (PII).
+            </summary>
+        </member>
+        <member name="F:GenAiIncubator.LlmUtils.Core.Enums.PluginNamesEnum.Classification">
+            <summary>
+            Plugin for classifying data.
+            </summary>
+        </member>
+        <member name="F:GenAiIncubator.LlmUtils.Core.Enums.PluginNamesEnum.ConversationSummarisation">
+            <summary>
+            Plugin for summarizing conversations.
+            </summary>
+        </member>
+        <member name="F:GenAiIncubator.LlmUtils.Core.Enums.PluginNamesEnum.ConversationLastStoryExtractor">
+            <summary>
+            Plugin for extracting the information concerning the last story from a conversation.
+            </summary>
+        </member>
+        <member name="F:GenAiIncubator.LlmUtils.Core.Enums.PluginNamesEnum.UserStoryCreation">
+            <summary>
+            Plugin to create user stories from input requirements.
+            </summary>
+        </member>
+        <member name="T:GenAiIncubator.LlmUtils.Core.Enums.RequirementCode">
+            <summary>
+            Codes for requirements used to evaluate claims across general and type-specific rules.
+            </summary>
+        </member>
+        <member name="F:GenAiIncubator.LlmUtils.Core.Enums.RequirementCode.GreenElectricity">
+            <summary>
+            Sustainability requirements related to green electricity.
+            </summary>
+        </member>
+        <member name="F:GenAiIncubator.LlmUtils.Core.Enums.RequirementCode.GreenGas">
+            <summary>
+            Sustainability requirements related to green gas.
+            </summary>
+        </member>
+        <member name="F:GenAiIncubator.LlmUtils.Core.Enums.RequirementCode.HeatAndCold">
+            <summary>
+            Sustainability requirements related to heat or cold.
+            </summary>
+        </member>
+        <member name="F:GenAiIncubator.LlmUtils.Core.Enums.RequirementCode.ParisClimateTargets">
+            <summary>
+            Sustainability requirements related to the Paris Climate Agreement.
+            </summary>
+        </member>
+        <member name="F:GenAiIncubator.LlmUtils.Core.Enums.RequirementCode.FossilFreeLivingInOneGeneration">
+            <summary>
+            Sustainability requirements related to wording: 'Fossil free living in one generation'
+            </summary>
+        </member>
+        <member name="F:GenAiIncubator.LlmUtils.Core.Enums.RequirementCode.Comparison">
+            <summary>
+            Sustainability requirements related to comparison statements.
+            </summary>
+        </member>
+        <member name="F:GenAiIncubator.LlmUtils.Core.Enums.RequirementCode.Superlatives">
+            <summary>
+            Sustainability requirements related to superlative statements.
+            </summary>
+        </member>
+        <member name="F:GenAiIncubator.LlmUtils.Core.Enums.RequirementCode.EnergyLabel">
+            <summary>
+            Energy Label such as Electricity Label (stroometiket) or Heat Label (warmteetiket)
+            </summary>
+        </member>
+        <member name="F:GenAiIncubator.LlmUtils.Core.Enums.RequirementCode.General_ClearAndUnambiguous">
+            <summary>
+            Is the claim clear and unambiguous?
+            </summary>
+        </member>
+        <member name="F:GenAiIncubator.LlmUtils.Core.Enums.RequirementCode.General_FactuallyCorrectWithSubstanciation">
+            <summary>
+            Is the claim factually correct, with substanciation?
+            </summary>
+        </member>
+        <member name="F:GenAiIncubator.LlmUtils.Core.Enums.RequirementCode.General_NotMisleading">
+            <summary>
+            Is the claim not misleading?
+            </summary>
+        </member>
+        <member name="F:GenAiIncubator.LlmUtils.Core.Enums.RequirementCode.Ambition_ClearlyLabeledAsAmbition">
+            <summary>
+            It is clearly stated that this is an ambition/future goal (not the current situation).
+            </summary>
+        </member>
+        <member name="F:GenAiIncubator.LlmUtils.Core.Enums.RequirementCode.Ambition_ConcreteObjectiveVerifiableTargets">
+            <summary>
+            Ambition is based on concrete, objective, and verifiable targets.
+            </summary>
+        </member>
+        <member name="F:GenAiIncubator.LlmUtils.Core.Enums.RequirementCode.Ambition_PlansAndMeasuresPresent">
+            <summary>
+            Plans and measures are described to support feasibility of the ambition.
+            </summary>
+        </member>
+        <member name="T:GenAiIncubator.LlmUtils.Core.Enums.SustainabilityClaimType">
+            <summary>
+            The supported sustainability claim types identified on webpages or documents.
+            </summary>
+        </member>
+        <member name="F:GenAiIncubator.LlmUtils.Core.Enums.SustainabilityClaimType.Unspecified">
+            <summary>
+            The claim has not yet been classified into one of the supported types.
+            </summary>
+        </member>
+        <member name="F:GenAiIncubator.LlmUtils.Core.Enums.SustainabilityClaimType.Regular">
+            <summary>
+            A statement that a product, service, activity, or company has a positive, less harmful,
+            or no impact on the environment or other sustainability aspects.
+            </summary>
+        </member>
+        <member name="F:GenAiIncubator.LlmUtils.Core.Enums.SustainabilityClaimType.Ambition">
+            <summary>
+            A statement about a future aim or goal regarding sustainability.
+            </summary>
+        </member>
+        <member name="F:GenAiIncubator.LlmUtils.Core.Enums.SustainabilityClaimType.Comparison">
+            <summary>
+            A statement comparing a product, service, or company to another in terms of sustainability.
+            </summary>
+        </member>
+        <member name="T:GenAiIncubator.LlmUtils.Core.Enums.SustainabilityTopicsEnum">
+            <summary>
+            Codes for requirements used to evaluate claims across general and type-specific rules.
+            </summary>
+        </member>
+        <member name="F:GenAiIncubator.LlmUtils.Core.Enums.SustainabilityTopicsEnum.GreenGas">
+            <summary>
+            Green Gas
+            </summary>
+        </member>
+        <member name="F:GenAiIncubator.LlmUtils.Core.Enums.SustainabilityTopicsEnum.GreenElectricity">
+            <summary>
+            Green Electricity
+            </summary>
+        </member>
+        <member name="F:GenAiIncubator.LlmUtils.Core.Enums.SustainabilityTopicsEnum.HeatAndCold">
+            <summary>
+            Heat and Cold
+            </summary>
+        </member>
+        <member name="F:GenAiIncubator.LlmUtils.Core.Enums.SustainabilityTopicsEnum.ParisClimateTargets">
+            <summary>
+            Paris Climate Targets
+            </summary>
+        </member>
+        <member name="F:GenAiIncubator.LlmUtils.Core.Enums.SustainabilityTopicsEnum.FossilFreeLivingInOneGeneration">
+            <summary>
+            Wording: Fossil free living in one generation
+            </summary>
+        </member>
+        <member name="F:GenAiIncubator.LlmUtils.Core.Enums.SustainabilityTopicsEnum.ComparisonStatement">
+            <summary>
+            Statement that expresses a comparison between a product, service, or company and another product, service, or company.
+            </summary>
+        </member>
+        <member name="F:GenAiIncubator.LlmUtils.Core.Enums.SustainabilityTopicsEnum.SuperlativesStatement">
+            <summary>
+            Statement that uses superlative wording implying absolute superiority (e.g. 'most sustainable', 'largest', 'best').
+            </summary>
+        </member>
+        <member name="F:GenAiIncubator.LlmUtils.Core.Enums.SustainabilityTopicsEnum.EnergyLabel">
+            <summary>
+            Energy Label such as Electricity Label (stroometiket) or Heat Label (warmteetiket)
+            </summary>
+        </member>
+        <member name="T:GenAiIncubator.LlmUtils.Core.Enums.UnwantedDataTypesEnum">
+            <summary>
+            Represents the different types of sensitive or unwanted data that can be classified.
+            </summary>
+        </member>
+        <member name="F:GenAiIncubator.LlmUtils.Core.Enums.UnwantedDataTypesEnum.BSN">
+            <summary>
+            BSN (Burgerservicenummer, Dutch social security number).
+            </summary>
+        </member>
+        <member name="F:GenAiIncubator.LlmUtils.Core.Enums.UnwantedDataTypesEnum.ChildrenUnder16">
+            <summary>
+            Information about children under 16 years old.
+            </summary>
+        </member>
+        <member name="F:GenAiIncubator.LlmUtils.Core.Enums.UnwantedDataTypesEnum.EthnicOrigin">
+            <summary>
+            Ethnic origin.
+            </summary>
+        </member>
+        <member name="F:GenAiIncubator.LlmUtils.Core.Enums.UnwantedDataTypesEnum.PoliticalOpinions">
+            <summary>
+            Political opinions.
+            </summary>
+        </member>
+        <member name="F:GenAiIncubator.LlmUtils.Core.Enums.UnwantedDataTypesEnum.ReligiousOrPhilosophicalBeliefs">
+            <summary>
+            Religious or philosophical beliefs.
+            </summary>
+        </member>
+        <member name="F:GenAiIncubator.LlmUtils.Core.Enums.UnwantedDataTypesEnum.TradeUnionMembership">
+            <summary>
+            Trade union membership.
+            </summary>
+        </member>
+        <member name="F:GenAiIncubator.LlmUtils.Core.Enums.UnwantedDataTypesEnum.GeneticData">
+            <summary>
+            Genetic data processing.
+            </summary>
+        </member>
+        <member name="F:GenAiIncubator.LlmUtils.Core.Enums.UnwantedDataTypesEnum.BiometricData">
+            <summary>
+            Biometric data for uniquely identifying a natural person.
+            </summary>
+        </member>
+        <member name="F:GenAiIncubator.LlmUtils.Core.Enums.UnwantedDataTypesEnum.HealthData">
+            <summary>
+            Data concerning health.
+            </summary>
+        </member>
+        <member name="F:GenAiIncubator.LlmUtils.Core.Enums.UnwantedDataTypesEnum.SexLifeOrOrientation">
+            <summary>
+            Data concerning a natural person's sex life or sexual orientation.
+            </summary>
+        </member>
+        <member name="F:GenAiIncubator.LlmUtils.Core.Enums.UnwantedDataTypesEnum.CriminalConvictions">
+            <summary>
+            Criminal convictions.
+            </summary>
+        </member>
+        <member name="F:GenAiIncubator.LlmUtils.Core.Enums.UnwantedDataTypesEnum.OffencesOrSecurityMeasures">
+            <summary>
+            Offences or related security measures based on Article 6(1).
+            </summary>
+        </member>
+        <member name="T:GenAiIncubator.LlmUtils.Core.Extensions.EnumExtensions">
+            <summary>
+            Provides extension methods for working with enumeration types.
+            </summary>
+        </member>
+        <member name="M:GenAiIncubator.LlmUtils.Core.Extensions.EnumExtensions.GetDescription(System.Enum)">
+            <summary>
+            Retrieves the description of an enumeration value. If the enumeration value
+            is decorated with a <see cref="T:System.ComponentModel.DescriptionAttribute"/>, the description from
+            the attribute is returned. Otherwise, the string representation of the value
+            is returned.
+            </summary>
+            <param name="value">The enumeration value.</param>
+            <returns>
+            The description of the enumeration value if a <see cref="T:System.ComponentModel.DescriptionAttribute"/>
+            is present; otherwise, the string representation of the enumeration value.
+            </returns>
+            <exception cref="T:System.ArgumentNullException">
+            Thrown if the provided enumeration value is null.
+            </exception>
+        </member>
+        <member name="M:GenAiIncubator.LlmUtils.Core.Extensions.EnumExtensions.GetFormattedDescriptionList``1">
+            <summary>
+            Generates a formatted string listing all values of the specified enumeration type
+            along with their descriptions.
+            </summary>
+            <typeparam name="TEnum">The enumeration type.</typeparam>
+            <returns>A formatted string listing all enumeration values and their descriptions.</returns>
+        </member>
+        <member name="T:GenAiIncubator.LlmUtils.Core.Extensions.ServiceCollectionExtensions">
+            <summary>
+            Provides extension methods for adding LlmUtils services to the IServiceCollection.
+            </summary>
+        </member>
+        <member name="M:GenAiIncubator.LlmUtils.Core.Extensions.ServiceCollectionExtensions.AddLlmUtils(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action{GenAiIncubator.LlmUtils.Core.Options.KernelOptions})">
+            <summary>
+            Adds LlmUtils services to the IServiceCollection.
+            </summary>
+            <param name="services">The IServiceCollection to add services to.</param>
+            <param name="configureOptions">An optional action to configure KernelOptions.</param>
+            <returns>The updated IServiceCollection.</returns>
+        </member>
+        <member name="T:GenAiIncubator.LlmUtils.Core.Helpers.ChatHelpers">
+            <summary>
+            Provides helper methods for executing chat prompts.
+            </summary>
+        </member>
+        <member name="M:GenAiIncubator.LlmUtils.Core.Helpers.ChatHelpers.ExecutePromptAsync(Microsoft.SemanticKernel.Kernel,System.String,System.Collections.Generic.List{Microsoft.SemanticKernel.ImageContent},System.Type,System.Nullable{System.Threading.CancellationToken})">
+            <summary>
+            Executes a chat prompt asynchronously.
+            </summary>
+            <param name="kernel">The kernel to use for executing the prompt.</param>
+            <param name="prompt">The prompt to execute.</param>
+            <param name="images">Image content to include in the prompt.</param>
+            <param name="outputFormatType">Optional output format type.</param>
+            <param name="cancellationToken">Optional cancellation token.</param>
+            <returns>A task that represents the asynchronous operation. The task result contains the response as a string.</returns>
+        </member>
+        <member name="M:GenAiIncubator.LlmUtils.Core.Helpers.ChatHelpers.ExecutePromptAsync(Microsoft.SemanticKernel.Kernel,System.String,System.Collections.Generic.IEnumerable{Microsoft.SemanticKernel.ImageContent},System.Type,System.Nullable{System.Threading.CancellationToken})">
+            <summary>
+            Executes a chat prompt asynchronously.
+            </summary>
+            <param name="kernel">The kernel to use for executing the prompt.</param>
+            <param name="prompt">The prompt to execute.</param>
+            <param name="images">Image content to include in the prompt.</param>
+            <param name="outputFormatType">Optional output format type.</param>
+            <param name="cancellationToken">Optional cancellation token.</param>
+            <returns>A task that represents the asynchronous operation. The task result contains the response as a string.</returns>
+        </member>
+        <member name="M:GenAiIncubator.LlmUtils.Core.Helpers.ChatHelpers.ExecutePromptAsync(Microsoft.SemanticKernel.Kernel,System.String,System.Type,System.Nullable{System.Threading.CancellationToken})">
+            <summary>
+            Executes a chat prompt asynchronously.
+            </summary>
+            <param name="kernel">The kernel to use for executing the prompt.</param>
+            <param name="prompt">The prompt to execute.</param>
+            <param name="outputFormatType">Optional output format type.</param>
+            <param name="cancellationToken">Optional cancellation token.</param>
+            <returns>A task that represents the asynchronous operation. The task result contains the response as a string.</returns>
+        </member>
+        <member name="M:GenAiIncubator.LlmUtils.Core.Helpers.ChatHelpers.ExecutePromptAsync(Microsoft.SemanticKernel.Kernel,System.String,Microsoft.SemanticKernel.ImageContent,System.Type,System.Nullable{System.Threading.CancellationToken})">
+            <summary>
+            Executes a chat prompt asynchronously with a single image.
+            </summary>
+            <param name="kernel">The kernel to use for executing the prompt.</param>
+            <param name="prompt">The prompt to execute.</param>
+            <param name="image">Image content to include in the prompt.</param>
+            <param name="outputFormatType">Optional output format type.</param>
+            <param name="cancellationToken">Optional cancellation token.</param>
+            <returns>A task that represents the asynchronous operation. The task result contains the response as a string.</returns>
+        </member>
+        <member name="M:GenAiIncubator.LlmUtils.Core.Helpers.ChatHelpers.ExecutePromptAsync(Microsoft.SemanticKernel.Kernel,Microsoft.SemanticKernel.ChatCompletion.ChatHistory,System.Type,System.Nullable{System.Threading.CancellationToken})">
+            <summary>
+            Executes a chat prompt asynchronously using a pre-built chat history.
+            </summary>
+            <param name="kernel">The kernel to use for executing the prompt.</param>
+            <param name="chatHistory">The chat history to execute.</param>
+            <param name="outputFormatType">Optional output format type.</param>
+            <param name="cancellationToken">Optional cancellation token.</param>
+            <returns>A task that represents the asynchronous operation. The task result contains the response as a string.</returns>
+        </member>
+        <member name="T:GenAiIncubator.LlmUtils.Core.Helpers.CustomerJourneyHelper">
+            <summary>
+            Helper class for exposing different customer journey classifications.
+            </summary>
+        </member>
+        <member name="M:GenAiIncubator.LlmUtils.Core.Helpers.CustomerJourneyHelper.GetMainJourneys">
+            <summary>
+            Gets a distinct list of customer journey classifications.
+            </summary>
+            <returns>An <see cref="T:System.Collections.Generic.IEnumerable`1"/> of distinct classification strings.</returns>
+        </member>
+        <member name="M:GenAiIncubator.LlmUtils.Core.Helpers.CustomerJourneyHelper.GetSubcategories(System.String)">
+            <summary>
+            Gets the subcategories for a given classification.
+            </summary>
+            <param name="classification">The classification to filter subcategories by.</param>
+            <returns>An <see cref="T:System.Collections.Generic.IEnumerable`1"/> of subcategory strings.</returns>
+        </member>
+        <member name="M:GenAiIncubator.LlmUtils.Core.Helpers.CustomerJourneyHelper.GetJourneysSubcategories">
+            <summary>
+            Gets a formatted string of all main journeys and their subcategories.
+            </summary>
+            <returns>A formatted string of main journeys and their subcategories.</returns>
+        </member>
+        <member name="M:GenAiIncubator.LlmUtils.Core.Helpers.CustomerJourneyHelper.GetAllCustomerJourneys">
+            <summary>
+            Gets a list of customer journey classifications.
+            </summary>
+            <returns>An <see cref="T:System.Collections.Generic.IEnumerable`1"/> of <see cref="T:GenAiIncubator.LlmUtils.Core.Models.CustomerJourneyClassification"/> objects.</returns>
+        </member>
+        <member name="T:GenAiIncubator.LlmUtils.Core.Helpers.PluginHelpers">
+            <summary>
+            Provides helper methods for plugin operations.
+            </summary>
+        </member>
+        <member name="M:GenAiIncubator.LlmUtils.Core.Helpers.PluginHelpers.GetPluginDirectoryPath">
+            <summary>
+            Gets the directory path for the plugin library.
+            </summary>
+            <returns>The plugin directory path.</returns>
+        </member>
+        <member name="M:GenAiIncubator.LlmUtils.Core.Helpers.PluginHelpers.ExecutePluginAsync(Microsoft.SemanticKernel.Kernel,System.String,System.Collections.Generic.IDictionary{System.String,System.Object},System.Threading.CancellationToken)">
+            <summary>
+            Executes a plugin asynchronously. Plugin must be registered with the <paramref name="kernel"/> param. 
+            This function will attempt to execute a function of the same name as the plugin.
+            </summary>
+            <param name="kernel">The kernel instance.</param>
+            <param name="pluginName">The name of the plugin to execute. Should correspond to a plugin defined in the PluginLibrary.</param>
+            <param name="input">The input parameters for the plugin.</param>
+            <param name="cancellationToken">A token to monitor for cancellation requests.</param>
+            <returns>A task that represents the asynchronous operation. The task result contains the invocation result.</returns>
+        </member>
+        <member name="T:GenAiIncubator.LlmUtils.Core.Models.AudioTranscriptionResponse">
+            <summary>
+            Represents the response of an audio transcription.
+            </summary>
+        </member>
+        <member name="P:GenAiIncubator.LlmUtils.Core.Models.AudioTranscriptionResponse.Transcription">
+            <summary>
+            The transcription of the audio.
+            </summary>
+        </member>
+        <member name="P:GenAiIncubator.LlmUtils.Core.Models.AudioTranscriptionResponse.AudioLength">
+            <summary>
+            The length of the transcribed audio.
+            </summary>
+        </member>
+        <member name="T:GenAiIncubator.LlmUtils.Core.Models.CustomerJourneyClassification">
+            <summary>
+            Represents a customer journey classification.
+            </summary>
+            <remarks>
+            Initializes a new instance of the <see cref="T:GenAiIncubator.LlmUtils.Core.Models.CustomerJourneyClassification"/> class.
+            </remarks>
+            <param name="id">The id of the category-subcategory pair.</param>
+            <param name="classification">The main topic of the customer journey classification.</param>
+            <param name="subcategory">The specific classification of the customer journey.</param>
+        </member>
+        <member name="M:GenAiIncubator.LlmUtils.Core.Models.CustomerJourneyClassification.#ctor(System.Int32,System.String,System.String)">
+            <summary>
+            Represents a customer journey classification.
+            </summary>
+            <remarks>
+            Initializes a new instance of the <see cref="T:GenAiIncubator.LlmUtils.Core.Models.CustomerJourneyClassification"/> class.
+            </remarks>
+            <param name="id">The id of the category-subcategory pair.</param>
+            <param name="classification">The main topic of the customer journey classification.</param>
+            <param name="subcategory">The specific classification of the customer journey.</param>
+        </member>
+        <member name="P:GenAiIncubator.LlmUtils.Core.Models.CustomerJourneyClassification.Id">
+            <summary>
+            Gets or sets the identifier for the customer journey classification.
+            </summary>
+        </member>
+        <member name="P:GenAiIncubator.LlmUtils.Core.Models.CustomerJourneyClassification.Classification">
+            <summary>
+            Gets or sets the main topic of the customer journey classification.
+            </summary>
+        </member>
+        <member name="P:GenAiIncubator.LlmUtils.Core.Models.CustomerJourneyClassification.Subcategory">
+            <summary>
+            Gets or sets the specific classification of the customer journey.
+            </summary>
+        </member>
+        <member name="M:GenAiIncubator.LlmUtils.Core.Models.CustomerJourneyClassification.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="T:GenAiIncubator.LlmUtils.Core.Models.InvalidClassification">
+            <summary>
+            Represents an invalid customer journey classification.
+            </summary>
+        </member>
+        <member name="M:GenAiIncubator.LlmUtils.Core.Models.InvalidClassification.#ctor">
+            <summary>
+            Represents an invalid customer journey classification.
+            </summary>
+        </member>
+        <member name="T:GenAiIncubator.LlmUtils.Core.Models.HeaterTypeClassificationResponse">
+            <summary>
+            Represents the response of a heater type classification.
+            </summary>
+        </member>
+        <member name="P:GenAiIncubator.LlmUtils.Core.Models.HeaterTypeClassificationResponse.HeaterType">
+            <summary>
+            The most likely recognised heater type. If there is uncertainty, HeaterTypeAlt provides an alternative.
+            </summary>
+        </member>
+        <member name="P:GenAiIncubator.LlmUtils.Core.Models.HeaterTypeClassificationResponse.HeaterTypeAlt">
+            <summary>
+            Alternative classifications for the recognised heater type, if the primary classification is uncertain.
+            </summary>
+        </member>
+        <member name="P:GenAiIncubator.LlmUtils.Core.Models.HeaterTypeClassificationResponse.Reason">
+            <summary>
+            The reason for the classification.
+            </summary>
+        </member>
+        <member name="T:GenAiIncubator.LlmUtils.Core.Models.LlmInvocationResult">
+            <summary>
+            Wrapper around the result of a LLM invocation, meant to centralize the result of LLM 
+            invocations, which are executed in different ways and produce different result types.
+            </summary>
+        </member>
+        <member name="P:GenAiIncubator.LlmUtils.Core.Models.LlmInvocationResult.Content">
+            <summary>
+            String content returned by the LLM invocation.
+            </summary>
+        </member>
+        <member name="P:GenAiIncubator.LlmUtils.Core.Models.LlmInvocationResult.RenderedPrompt">
+            <summary>
+            The final prompt that was rendered to the LLM.
+            </summary>
+        </member>
+        <member name="P:GenAiIncubator.LlmUtils.Core.Models.LlmInvocationResult.TotalCost">
+            <summary>
+            The total cost associated with the LLM invocation.
+            </summary>
+        </member>
+        <member name="T:GenAiIncubator.LlmUtils.Core.Models.LlmUnwantedDataEntry">
+            <summary>
+            Internal model entry for LLM output representing a single unwanted data evaluation.
+            </summary>
+        </member>
+        <member name="P:GenAiIncubator.LlmUtils.Core.Models.LlmUnwantedDataEntry.UnwantedDataType">
+            <summary>
+            The unwanted data type evaluated.
+            </summary>
+        </member>
+        <member name="P:GenAiIncubator.LlmUtils.Core.Models.LlmUnwantedDataEntry.IsPresent">
+            <summary>
+            Whether the type is present in the document.
+            </summary>
+        </member>
+        <member name="P:GenAiIncubator.LlmUtils.Core.Models.LlmUnwantedDataEntry.Reason">
+            <summary>
+            Reasoning for the assessment.
+            </summary>
+        </member>
+        <member name="T:GenAiIncubator.LlmUtils.Core.Models.LlmUnwantedDataMatrix">
+            <summary>
+            Internal model representing the full matrix returned by the LLM for unwanted data classification.
+            </summary>
+        </member>
+        <member name="P:GenAiIncubator.LlmUtils.Core.Models.LlmUnwantedDataMatrix.DocumentType">
+            <summary>
+            The type of document being classified.
+            </summary>
+        </member>
+        <member name="P:GenAiIncubator.LlmUtils.Core.Models.LlmUnwantedDataMatrix.DocumentTypeReasoning">
+            <summary>
+            The reasoning behind the document type classification.
+            </summary>
+        </member>
+        <member name="P:GenAiIncubator.LlmUtils.Core.Models.LlmUnwantedDataMatrix.UnwantedData">
+            <summary>
+            Flat list of entries, one per unwanted data type.
+            </summary>
+        </member>
+        <member name="T:GenAiIncubator.LlmUtils.Core.Models.ParsedDocument">
+            <summary>
+            Represents a document that has been parsed into its constituent parts for AI processing.
+            </summary>
+        </member>
+        <member name="P:GenAiIncubator.LlmUtils.Core.Models.ParsedDocument.TextContent">
+            <summary>
+            The extracted text content from the document.
+            </summary>
+        </member>
+        <member name="P:GenAiIncubator.LlmUtils.Core.Models.ParsedDocument.Images">
+            <summary>
+            The extracted images from the document (including PDF pages converted to images).
+            </summary>
+        </member>
+        <member name="P:GenAiIncubator.LlmUtils.Core.Models.ParsedDocument.DocumentExtension">
+            <summary>
+            The original document extension for reference.
+            </summary>
+        </member>
+        <member name="M:GenAiIncubator.LlmUtils.Core.Models.ParsedDocument.FromImages(System.Collections.Generic.List{Microsoft.SemanticKernel.ImageContent},System.String)">
+            <summary>
+            Creates a ParsedDocument with only images (for image files).
+            </summary>
+        </member>
+        <member name="M:GenAiIncubator.LlmUtils.Core.Models.ParsedDocument.FromTextAndImages(System.String,System.Collections.Generic.List{Microsoft.SemanticKernel.ImageContent},System.String)">
+            <summary>
+            Creates a ParsedDocument with text and images (for Word documents).
+            </summary>
+        </member>
+        <member name="M:GenAiIncubator.LlmUtils.Core.Models.ParsedDocument.FromSingleImage(Microsoft.SemanticKernel.ImageContent,System.String)">
+            <summary>
+            Creates a ParsedDocument with only a single image (for simple image files).
+            </summary>
+        </member>
+        <member name="T:GenAiIncubator.LlmUtils.Core.Models.RecognizedUnwantedDataType">
+            <summary>
+            Represents unwanted data recognized in a document.
+            </summary>
+        </member>
+        <member name="P:GenAiIncubator.LlmUtils.Core.Models.RecognizedUnwantedDataType.UnwantedDataType">
+            <summary>
+            The type of unwanted data recognized.
+            </summary>
+        </member>
+        <member name="P:GenAiIncubator.LlmUtils.Core.Models.RecognizedUnwantedDataType.Reason">
+            <summary>
+            The reason for the classification of the unwanted data.
+            </summary>
+        </member>
+        <member name="T:GenAiIncubator.LlmUtils.Core.Models.SustainabilityClaims.RequirementViolation">
+            <summary>
+            Describes a specific violation against a requirement code for a claim.
+            </summary>
+        </member>
+        <member name="P:GenAiIncubator.LlmUtils.Core.Models.SustainabilityClaims.RequirementViolation.Code">
+            <summary>
+            The requirement that was violated.
+            </summary>
+        </member>
+        <member name="P:GenAiIncubator.LlmUtils.Core.Models.SustainabilityClaims.RequirementViolation.Message">
+            <summary>
+            Human-readable message explaining the violation.
+            </summary>
+        </member>
+        <member name="P:GenAiIncubator.LlmUtils.Core.Models.SustainabilityClaims.RequirementViolation.Warning">
+            <summary>
+            Warning message if applicable.
+            </summary>
+        </member>
+        <member name="T:GenAiIncubator.LlmUtils.Core.Models.SustainabilityClaims.SubstanciationEvaluationsTopicGroup">
+            <summary>
+            A group of claims with missing substanciation that are related to a specific topic.
+            </summary>
+        </member>
+        <member name="P:GenAiIncubator.LlmUtils.Core.Models.SustainabilityClaims.SubstanciationEvaluationsTopicGroup.Topic">
+            <summary>
+            The topic of the claims.
+            </summary>
+        </member>
+        <member name="P:GenAiIncubator.LlmUtils.Core.Models.SustainabilityClaims.SubstanciationEvaluationsTopicGroup.TopicDescription">
+            <summary>
+            The topic description of the claims.
+            </summary>
+        </member>
+        <member name="P:GenAiIncubator.LlmUtils.Core.Models.SustainabilityClaims.SubstanciationEvaluationsTopicGroup.Evaluations">
+            <summary>
+            The claims in the group.
+            </summary>
+        </member>
+        <member name="P:GenAiIncubator.LlmUtils.Core.Models.SustainabilityClaims.SubstanciationEvaluationsTopicGroup.IsSatisfied">
+            <summary>
+            Whether the group is satisfied.
+            A group is satisfied if at least one evaluation is not violating the requirement.
+            </summary>
+        </member>
+        <member name="M:GenAiIncubator.LlmUtils.Core.Models.SustainabilityClaims.SubstanciationEvaluationsTopicGroup.Equals(GenAiIncubator.LlmUtils.Core.Models.SustainabilityClaims.SubstanciationEvaluationsTopicGroup)">
+            <summary>
+            Determines whether the specified <paramref name="other"/> is equal to the current instance.
+            Equality is based solely on the value of <see cref="P:GenAiIncubator.LlmUtils.Core.Models.SustainabilityClaims.SubstanciationEvaluationsTopicGroup.Topic"/>.
+            </summary>
+            <param name="other">The other instance to compare with the current instance.</param>
+            <returns><c>true</c> if the <paramref name="other"/> has the same <see cref="P:GenAiIncubator.LlmUtils.Core.Models.SustainabilityClaims.SubstanciationEvaluationsTopicGroup.Topic"/>; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:GenAiIncubator.LlmUtils.Core.Models.SustainabilityClaims.SubstanciationEvaluationsTopicGroup.Equals(System.Object)">
+            <summary>
+            Determines whether the specified <paramref name="obj"/> is equal to the current instance.
+            </summary>
+            <param name="obj">The object to compare with the current instance.</param>
+            <returns><c>true</c> if the specified object is equal to the current instance; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:GenAiIncubator.LlmUtils.Core.Models.SustainabilityClaims.SubstanciationEvaluationsTopicGroup.GetHashCode">
+            <summary>
+            Returns a hash code for the current instance based solely on <see cref="P:GenAiIncubator.LlmUtils.Core.Models.SustainabilityClaims.SubstanciationEvaluationsTopicGroup.Topic"/>.
+            </summary>
+            <returns>An integer hash code.</returns>
+        </member>
+        <member name="T:GenAiIncubator.LlmUtils.Core.Models.SustainabilityClaims.SustainabilityClaim">
+            <summary>
+            Represents a single extracted sustainability claim and its classified type.
+            </summary>
+        </member>
+        <member name="P:GenAiIncubator.LlmUtils.Core.Models.SustainabilityClaims.SustainabilityClaim.ClaimText">
+            <summary>
+            The raw text of the claim as found in the content.
+            </summary>
+        </member>
+        <member name="P:GenAiIncubator.LlmUtils.Core.Models.SustainabilityClaims.SustainabilityClaim.ClaimType">
+            <summary>
+            The classified claim type.
+            </summary>
+        </member>
+        <member name="P:GenAiIncubator.LlmUtils.Core.Models.SustainabilityClaims.SustainabilityClaim.RelatedText">
+            <summary>
+            Additional surrounding text that provides context for the claim.
+            Helpful to inform downstream checks (e.g., substanciation, evidence or requirement evaluation).
+            </summary>
+        </member>
+        <member name="P:GenAiIncubator.LlmUtils.Core.Models.SustainabilityClaims.SustainabilityClaim.Reasoning">
+            <summary>
+            Short reasoning describing why this text was considered a sustainability claim and how it was classified.
+            </summary>
+        </member>
+        <member name="P:GenAiIncubator.LlmUtils.Core.Models.SustainabilityClaims.SustainabilityClaim.RelatedUrls">
+            <summary>
+            Potential substanciation URLs that are directly on or next to the claim (one click away).
+            Extracted from the base HTML during claim extraction.
+            </summary>
+        </member>
+        <member name="P:GenAiIncubator.LlmUtils.Core.Models.SustainabilityClaims.SustainabilityClaim.SourceUrl">
+            <summary>
+            The canonical/source URL from which this claim was extracted (page where the claim lives).
+            Useful for providing page-level context distinct from immediate RelatedUrls evidence links.
+            </summary>
+        </member>
+        <member name="P:GenAiIncubator.LlmUtils.Core.Models.SustainabilityClaims.SustainabilityClaim.RelatedTopics">
+            <summary>
+            List of topics that the claim is related to.
+            </summary>
+        </member>
+        <member name="T:GenAiIncubator.LlmUtils.Core.Models.SustainabilityClaims.SustainabilityClaimComplianceEvaluation">
+            <summary>
+            The evaluation result for a single sustainability claim, including per-requirement violations and a suggested alternative.
+            </summary>
+        </member>
+        <member name="P:GenAiIncubator.LlmUtils.Core.Models.SustainabilityClaims.SustainabilityClaimComplianceEvaluation.Claim">
+            <summary>
+            The claim that was evaluated.
+            </summary>
+        </member>
+        <member name="P:GenAiIncubator.LlmUtils.Core.Models.SustainabilityClaims.SustainabilityClaimComplianceEvaluation.IsCompliant">
+            <summary>
+            Whether the claim satisfies all applicable requirements.
+            Returns true when there are no violations, false otherwise.
+            </summary>
+        </member>
+        <member name="P:GenAiIncubator.LlmUtils.Core.Models.SustainabilityClaims.SustainabilityClaimComplianceEvaluation.Violations">
+            <summary>
+            Detailed list of requirement violations (empty when compliant).
+            </summary>
+        </member>
+        <member name="P:GenAiIncubator.LlmUtils.Core.Models.SustainabilityClaims.SustainabilityClaimComplianceEvaluation.Warnings">
+            <summary>
+            List of warnings that were raised during the evaluation, but did not result in a violation.
+            </summary>
+        </member>
+        <member name="P:GenAiIncubator.LlmUtils.Core.Models.SustainabilityClaims.SustainabilityClaimComplianceEvaluation.SuggestedAlternative">
+            <summary>
+            Optional suggested alternative phrasing when the claim is non-compliant.
+            </summary>
+        </member>
+        <member name="T:GenAiIncubator.LlmUtils.Core.Models.UnwantedDataClassificationResponse">
+            <summary>
+            Represents the response of a call to the unwanted data classification service.
+            </summary>
+        </member>
+        <member name="P:GenAiIncubator.LlmUtils.Core.Models.UnwantedDataClassificationResponse.DocumentType">
+            <summary>
+            The type of document being classified.
+            </summary>
+        </member>
+        <member name="P:GenAiIncubator.LlmUtils.Core.Models.UnwantedDataClassificationResponse.DocumentTypeReasoning">
+            <summary>
+            The reasoning behind the document type classification.
+            </summary>
+        </member>
+        <member name="P:GenAiIncubator.LlmUtils.Core.Models.UnwantedDataClassificationResponse.UnwantedData">
+            <summary>
+            A dictionary containing the types of unwanted data identified in the document and their reasoning.
+            </summary>
+        </member>
+        <member name="M:GenAiIncubator.LlmUtils.Core.Models.UnwantedDataClassificationResponse.GetErrorClassificationResponse">
+            <summary>
+            Creates an instance of <see cref="T:GenAiIncubator.LlmUtils.Core.Models.UnwantedDataClassificationResponse"/> with error values.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:GenAiIncubator.LlmUtils.Core.Models.UserStoryCreationResponse">
+            <summary>
+            Represents the response of a heater type classification.
+            </summary>
+        </member>
+        <member name="P:GenAiIncubator.LlmUtils.Core.Models.UserStoryCreationResponse.UserStory">
+            <summary>
+            Created user story.
+            </summary>
+        </member>
+        <member name="P:GenAiIncubator.LlmUtils.Core.Models.UserStoryCreationResponse.MissingInfo">
+            <summary>
+            Missing info useful to create the user story.
+            </summary>
+        </member>
+        <member name="T:GenAiIncubator.LlmUtils.Core.PluginLibrary.BsnExtraction.BsnRecognitionPlugin">
+            <summary>
+            Legacy BSN recognition plugin. 
+            This functionality has been moved to UnwantedDataClassificationSemanticService.
+            This class is kept for backward compatibility and may be removed in future versions.
+            </summary>
+        </member>
+        <member name="M:GenAiIncubator.LlmUtils.Core.PluginLibrary.BsnExtraction.BsnRecognitionPlugin.#ctor">
+            <summary>
+            Legacy BSN recognition plugin. 
+            This functionality has been moved to UnwantedDataClassificationSemanticService.
+            This class is kept for backward compatibility and may be removed in future versions.
+            </summary>
+        </member>
+        <member name="M:GenAiIncubator.LlmUtils.Core.PluginLibrary.BsnExtraction.BsnRecognitionPlugin.IsBSNAsync(System.String)">
+            <summary>
+            Checks if the provided string is a valid BSN (Burgerservicenummer).
+            </summary>
+            <param name="bsn">The candidate string to validate as BSN.</param>
+            <returns>True if the string is a valid BSN; otherwise, false.</returns>
+        </member>
+        <member name="M:GenAiIncubator.LlmUtils.Core.PluginLibrary.BsnExtraction.BsnRecognitionPlugin.ExtractBsnFromPassportAsync(Microsoft.SemanticKernel.ImageContent)">
+            <summary>
+            Extracts the BSN from a passport image. (Not implemented yet.)
+            </summary>
+            <returns>A task that represents the asynchronous operation. The task result contains the extracted BSN as a string.</returns>
+        </member>
+        <member name="M:GenAiIncubator.LlmUtils.Core.PluginLibrary.BsnExtraction.BsnRecognitionPlugin.GetPassportExtractionChatHistory(Microsoft.SemanticKernel.ImageContent)">
+            <summary>
+            Returns the prompt used for extracting a BSN from a passport image.
+            </summary>
+        </member>
+        <member name="T:GenAiIncubator.LlmUtils.Core.Services.ConversationSummarisationService">
+            <summary>
+            Provides functionality to summarise conversations into concise summaries.
+            </summary>
+        </member>
+        <member name="M:GenAiIncubator.LlmUtils.Core.Services.ConversationSummarisationService.#ctor(Microsoft.SemanticKernel.Kernel)">
+            <summary>
+            Provides functionality to summarise conversations into concise summaries.
+            </summary>
+        </member>
+        <member name="M:GenAiIncubator.LlmUtils.Core.Services.ConversationSummarisationService.SummariseConversationAsync(System.String,System.String,System.ValueTuple{System.Collections.Generic.IEnumerable{System.String},System.Int32},System.Threading.CancellationToken)">
+            <summary>
+            Summarises a conversation in a few sentences.
+            </summary>
+            <param name="conversation">The conversation to summarise.</param>
+            <param name="summaryAdditionalInstructions">Optional. Instructions describing what the summary should focus on.</param>
+            <param name="examplesAndLength">Optional. List of examples and length in sentences, illustrating the desired format of the summary.</param>
+            <param name="cancellationToken">Optional. The cancellation token.</param>
+            <returns>The sanitized text.</returns>
+        </member>
+        <member name="T:GenAiIncubator.LlmUtils.Core.Services.CustomerJourneyClassificationService">
+            <summary>
+            Provides a service for classifying a conversation in a customer journey.
+            A customer journey has a main customer journey type and a subcategory.
+            </summary>
+        </member>
+        <member name="M:GenAiIncubator.LlmUtils.Core.Services.CustomerJourneyClassificationService.#ctor(Microsoft.SemanticKernel.Kernel,GenAiIncubator.LlmUtils.Core.Services.ConversationSummarisationService)">
+            <summary>
+            Provides a service for classifying a conversation in a customer journey.
+            A customer journey has a main customer journey type and a subcategory.
+            </summary>
+        </member>
+        <member name="M:GenAiIncubator.LlmUtils.Core.Services.CustomerJourneyClassificationService.ClassifyConversationInCustomerJourneyAsync(System.String,System.Boolean,System.Boolean,System.Threading.CancellationToken)">
+            <summary>
+            Classifies a conversation in a customer journey. 
+            A list of customer journeys can be found here: TODO
+            </summary>
+            <param name="conversation">The conversation to classify.</param>
+            <param name="useSummary">Whether to use to use a summary or the full conversation in the classification LLM calls. Can be usefull if conversations are too large.</param>
+            <param name="twoStepClassification">Two step classification first classifies the main topic with a first LLM call, then the corresponding subcategory in another.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns>The sanitized text.</returns>
+        </member>
+        <member name="T:GenAiIncubator.LlmUtils.Core.Services.DocumentParsing.DocumentParser">
+            <summary>
+            Implementation of document parser that handles various document formats.
+            </summary>
+        </member>
+        <member name="M:GenAiIncubator.LlmUtils.Core.Services.DocumentParsing.DocumentParser.ParseDocumentAsync(System.Byte[],System.String,System.Threading.CancellationToken)">
+            <summary>
+            Parses a document into its constituent parts (text and images).
+            </summary>
+            <param name="document">The document bytes.</param>
+            <param name="documentExtension">The document extension (pdf, docx, png, etc.).</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns>A parsed document containing text and image content.</returns>
+        </member>
+        <member name="M:GenAiIncubator.LlmUtils.Core.Services.DocumentParsing.DocumentParser.ParsePdfDocumentAsync(System.Byte[],System.String,System.Threading.CancellationToken)">
+            <summary>
+            Parses a PDF document by converting it to images.
+            </summary>
+        </member>
+        <member name="M:GenAiIncubator.LlmUtils.Core.Services.DocumentParsing.DocumentParser.ParseWordDocument(System.Byte[],System.String)">
+            <summary>
+            Parses a Word document by extracting text and embedded images.
+            </summary>
+        </member>
+        <member name="M:GenAiIncubator.LlmUtils.Core.Services.DocumentParsing.DocumentParser.ParseImageDocument(System.Byte[],System.String)">
+            <summary>
+            Parses an image document by creating ImageContent.
+            </summary>
+        </member>
+        <member name="M:GenAiIncubator.LlmUtils.Core.Services.DocumentParsing.DocumentParser.ConvertPdfToImagesAsync(System.Byte[],System.Threading.CancellationToken)">
+            <summary>
+            Converts PDF pages to ImageContent objects using PDFsharp.
+            Moved from ChatHelpers to centralize document parsing logic.
+            </summary>
+        </member>
+        <member name="T:GenAiIncubator.LlmUtils.Core.Services.DocumentParsing.IDocumentParser">
+            <summary>
+            Interface for parsing documents into a standardized format for AI processing.
+            </summary>
+        </member>
+        <member name="M:GenAiIncubator.LlmUtils.Core.Services.DocumentParsing.IDocumentParser.ParseDocumentAsync(System.Byte[],System.String,System.Threading.CancellationToken)">
+            <summary>
+            Parses a document into its constituent parts (text and images).
+            </summary>
+            <param name="document">The document bytes.</param>
+            <param name="documentExtension">The document extension (pdf, docx, png, etc.).</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns>A parsed document containing text and image content.</returns>
+        </member>
+        <member name="T:GenAiIncubator.LlmUtils.Core.Services.HeaterRecognitionService">
+            <summary>
+            Provides a service for extracting the heater type from an image.
+            </summary>
+            <param name="kernel">The injected kernel object.</param>
+            <param name="imageValidationService">The injected image validation service.</param>
+        </member>
+        <member name="M:GenAiIncubator.LlmUtils.Core.Services.HeaterRecognitionService.#ctor(Microsoft.SemanticKernel.Kernel,GenAiIncubator.LlmUtils.Core.Services.IImageValidationService)">
+            <summary>
+            Provides a service for extracting the heater type from an image.
+            </summary>
+            <param name="kernel">The injected kernel object.</param>
+            <param name="imageValidationService">The injected image validation service.</param>
+        </member>
+        <member name="M:GenAiIncubator.LlmUtils.Core.Services.HeaterRecognitionService.ValidateImageBytes(System.Byte[],System.String)">
+            <summary>
+            Validates if the provided image bytes represent a valid image file.
+            </summary>
+            <param name="imageBytes">The image bytes to validate.</param>
+            <param name="filetype">File type of the image (png, jpg...).</param>
+            <returns>True if the image is valid, false otherwise.</returns>
+        </member>
+        <member name="M:GenAiIncubator.LlmUtils.Core.Services.HeaterRecognitionService.ExtractHeaterType(System.Byte[],System.String,System.Threading.CancellationToken)">
+            <summary>
+            Returns the heater type of a given input image.
+            </summary>
+            <param name="image">The image to classify.</param>
+            <param name="filetype">File type of the image to classify (png, jpg...).</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns>The recognized heater type along with an explanation.</returns>
+        </member>
+        <member name="T:GenAiIncubator.LlmUtils.Core.Services.IImageValidationService">
+            <summary>
+            Interface for image validation services.
+            </summary>
+        </member>
+        <member name="M:GenAiIncubator.LlmUtils.Core.Services.IImageValidationService.IsValidImageBytes(System.Byte[],System.String,System.String)">
+            <summary>
+            Validates if the provided image bytes represent a valid image file.
+            </summary>
+            <param name="imageBytes">The image bytes to validate.</param>
+            <param name="fileName">The filename including extension for validation.</param>
+            <param name="contentType">The MIME content type of the image.</param>
+            <returns>True if the image is valid, false otherwise.</returns>
+        </member>
+        <member name="M:GenAiIncubator.LlmUtils.Core.Services.IImageValidationService.IsValidImage(System.String)">
+            <summary>
+            Validates if the provided base64 string represents a valid image.
+            </summary>
+            <param name="image">The base64 image string to validate.</param>
+            <returns>True if the image is valid, false otherwise.</returns>
+        </member>
+        <member name="T:GenAiIncubator.LlmUtils.Core.Services.ImageValidationService">
+            <summary>
+            Service for validating image files based on content type, file signature, and size.
+            </summary>
+        </member>
+        <member name="M:GenAiIncubator.LlmUtils.Core.Services.ImageValidationService.IsValidImageBytes(System.Byte[],System.String,System.String)">
+            <summary>
+            Validates if the provided image bytes represent a valid image file.
+            </summary>
+            <param name="imageBytes">The image bytes to validate.</param>
+            <param name="fileName">The filename including extension for validation.</param>
+            <param name="contentType">The MIME content type of the image.</param>
+            <returns>True if the image is valid, false otherwise.</returns>
+        </member>
+        <member name="M:GenAiIncubator.LlmUtils.Core.Services.ImageValidationService.IsValidImage(System.String)">
+            <summary>
+            Validates if the provided base64 string represents a valid image.
+            </summary>
+            <param name="image">The base64 image string to validate.</param>
+            <returns>True if the image is valid, false otherwise.</returns>
+        </member>
+        <member name="T:GenAiIncubator.LlmUtils.Core.Services.PIIRemovalService">
+            <summary>
+            Service to remove Personally Identifiable Information (PII) from text.
+            </summary>
+            <param name="kernel">The injected kernel object.</param>
+        </member>
+        <member name="M:GenAiIncubator.LlmUtils.Core.Services.PIIRemovalService.#ctor(Microsoft.SemanticKernel.Kernel)">
+            <summary>
+            Service to remove Personally Identifiable Information (PII) from text.
+            </summary>
+            <param name="kernel">The injected kernel object.</param>
+        </member>
+        <member name="M:GenAiIncubator.LlmUtils.Core.Services.PIIRemovalService.AnonymiseContentAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Removes Personally Identifiable Information (PII) from a given text.
+            </summary>
+            <param name="content">The input text to sanitize.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns>The sanitized text.</returns>
+        </member>
+        <member name="T:GenAiIncubator.LlmUtils.Core.Services.SustainabilityClaims.ISustainabilityClaimsSemanticService">
+            <summary>
+            Contract for semantic (AI-based) operations for sustainability claims.
+            </summary>
+        </member>
+        <member name="M:GenAiIncubator.LlmUtils.Core.Services.SustainabilityClaims.ISustainabilityClaimsSemanticService.ExtractSustainabilityClaimsAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Extract all sustainability claims and their types from the provided content.
+            </summary>
+            <param name="content">Content to extract claims from.</param>
+            <param name="cancellationToken">A token to cancel the operation.</param>
+            <returns>A list of extracted claims with their classified types.</returns>
+        </member>
+        <member name="M:GenAiIncubator.LlmUtils.Core.Services.SustainabilityClaims.ISustainabilityClaimsSemanticService.EvaluateSustainabilityClaimComplianceAsync(GenAiIncubator.LlmUtils.Core.Models.SustainabilityClaims.SustainabilityClaim,System.Threading.CancellationToken)">
+            <summary>
+            Evaluates whether a sustainability claim meets compliance requirements for its type.
+            </summary>
+            <param name="claim">The sustainability claim to evaluate.</param>
+            <param name="cancellationToken">A token to cancel the operation.</param>
+            <returns>A compliance evaluation containing any violations and suggested alternatives.</returns>
+        </member>
+        <member name="M:GenAiIncubator.LlmUtils.Core.Services.SustainabilityClaims.ISustainabilityClaimsSemanticService.DoesContentProvideSubstanciationForClaimAsync(GenAiIncubator.LlmUtils.Core.Models.SustainabilityClaims.SustainabilityClaim,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Determines whether the provided content supplies sufficient, accessible substanciation supporting the claim.
+            </summary>
+            <param name="claim">The sustainability claim.</param>
+            <param name="substanciationContent">Normalized content fetched from a related URL (one click away).</param>
+            <param name="cancellationToken">Cancellation token.</param>
+            <returns>True if content provides substanciation for the claim; otherwise false.</returns>
+        </member>
+        <member name="M:GenAiIncubator.LlmUtils.Core.Services.SustainabilityClaims.ISustainabilityClaimsSemanticService.DoesContentProvidePlansAndMeasuresForClaimAsync(GenAiIncubator.LlmUtils.Core.Models.SustainabilityClaims.SustainabilityClaim,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Determines whether the provided content contains sufficient plans and measures supporting an ambition claim.
+            </summary>
+            <param name="claim">The sustainability ambition claim.</param>
+            <param name="evidenceContent">Normalized content fetched from a related URL (one click away).</param>
+            <param name="cancellationToken">Cancellation token.</param>
+            <returns>True if content provides plans and measures for the ambition claim; otherwise false.</returns>
+        </member>
+        <member name="M:GenAiIncubator.LlmUtils.Core.Services.SustainabilityClaims.ISustainabilityClaimsSemanticService.GetTopicForClaimRequiringEvidenceAsync(GenAiIncubator.LlmUtils.Core.Models.SustainabilityClaims.SustainabilityClaim,System.Collections.Generic.Dictionary{System.String,System.String},System.Threading.CancellationToken)">
+            <summary>
+            Gets the topic for a claim requiring evidence.
+            </summary>
+            <param name="claim">The sustainability claim.</param>
+            <param name="existingTopicsDescriptions">The existing topics descriptions.</param>
+            <param name="cancellationToken">Cancellation token.</param>
+            <returns>A key-value pair of the topic description and the topic name. Either a new topic or an existing one.</returns>
+        </member>
+        <member name="T:GenAiIncubator.LlmUtils.Core.Services.SustainabilityClaims.ISustainabilityClaimsService">
+            <summary>
+            Defines the orchestration contract for checking sustainability claims
+            on a webpage or arbitrary normalized content according to ACM/CDR/UCPD-aligned requirements.
+            </summary>
+        </member>
+        <member name="M:GenAiIncubator.LlmUtils.Core.Services.SustainabilityClaims.ISustainabilityClaimsService.CheckSustainabilityClaimsAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Fetches, normalizes and evaluates sustainability claims found at the specified URL.
+            </summary>
+            <param name="url">The URL of the page to analyze.</param>
+            <param name="cancellationToken">A token to cancel the operation.</param>
+            <returns>The list of sustainability claim compliance evaluations.</returns>
+        </member>
+        <member name="M:GenAiIncubator.LlmUtils.Core.Services.SustainabilityClaims.ISustainabilityClaimsService.CheckSustainabilityClaimsAsyncFromStringContent(System.String,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Evaluates sustainability claims from already-normalized content associated with a source URL.
+            </summary>
+            <param name="normalizedContent">The normalized content to inspect.</param>
+            <param name="url">The source URL related to the content.</param>
+            <param name="cancellationToken">A token to cancel the operation.</param>
+            <returns>The list of sustainability claim compliance evaluations.</returns>
+        </member>
+        <member name="T:GenAiIncubator.LlmUtils.Core.Services.SustainabilityClaims.SemanticModels.RecognisedSustainabilityClaim">
+            <summary>
+            Represents a single extracted sustainability claim and its classified type.
+            </summary>
+        </member>
+        <member name="P:GenAiIncubator.LlmUtils.Core.Services.SustainabilityClaims.SemanticModels.RecognisedSustainabilityClaim.ClaimText">
+            <summary>
+            The raw text of the claim as found in the content.
+            </summary>
+        </member>
+        <member name="P:GenAiIncubator.LlmUtils.Core.Services.SustainabilityClaims.SemanticModels.RecognisedSustainabilityClaim.ClaimType">
+            <summary>
+            The classified claim type.
+            </summary>
+        </member>
+        <member name="P:GenAiIncubator.LlmUtils.Core.Services.SustainabilityClaims.SemanticModels.RecognisedSustainabilityClaim.Reasoning">
+            <summary>
+            The reasoning behind the claim classification.
+            </summary>
+        </member>
+        <member name="P:GenAiIncubator.LlmUtils.Core.Services.SustainabilityClaims.SemanticModels.RecognisedSustainabilityClaim.RelatedText">
+            <summary>
+            Additional surrounding text that provides context for the claim.
+            Useful when the main claim text is short or when nearby text may
+            support evidence checks in subsequent steps.
+            </summary>
+        </member>
+        <member name="P:GenAiIncubator.LlmUtils.Core.Services.SustainabilityClaims.SemanticModels.RecognisedSustainabilityClaim.RelatedUrls">
+            <summary>
+            Potential evidence URLs that are directly on or next to the claim (one click away).
+            These are initially extracted from the base HTML content.
+            </summary>
+        </member>
+        <member name="P:GenAiIncubator.LlmUtils.Core.Services.SustainabilityClaims.SemanticModels.RecognisedSustainabilityClaim.RelatedTopics">
+            <summary>
+            List of topics that the claim is related to.
+            </summary>
+        </member>
+        <member name="T:GenAiIncubator.LlmUtils.Core.Services.SustainabilityClaims.SemanticModels.SustainabilityClaimComplianceEvaluationResponse">
+            <summary>
+            Represents the response of a call to the sustainability claims extraction service.
+            </summary>
+        </member>
+        <member name="P:GenAiIncubator.LlmUtils.Core.Services.SustainabilityClaims.SemanticModels.SustainabilityClaimComplianceEvaluationResponse.Violations">
+            <summary>
+            Gets or sets the list of requirement violations found during the compliance evaluation.
+            </summary>
+        </member>
+        <member name="P:GenAiIncubator.LlmUtils.Core.Services.SustainabilityClaims.SemanticModels.SustainabilityClaimComplianceEvaluationResponse.SuggestedAlternative">
+            <summary>
+            Gets or sets the suggested alternative text that complies with sustainability claim requirements.
+            </summary>
+        </member>
+        <member name="T:GenAiIncubator.LlmUtils.Core.Services.SustainabilityClaims.SemanticModels.SustainabilityClaimSubstanciationCheckResponse">
+            <summary>
+            Structured response for evaluating whether provided content offers sufficient substanciation for a claim.
+            </summary>
+        </member>
+        <member name="P:GenAiIncubator.LlmUtils.Core.Services.SustainabilityClaims.SemanticModels.SustainabilityClaimSubstanciationCheckResponse.ProvidesSubstanciation">
+            <summary>
+            Indicates whether the substanciation content provides sufficient support for the claim.
+            </summary>
+        </member>
+        <member name="P:GenAiIncubator.LlmUtils.Core.Services.SustainabilityClaims.SemanticModels.SustainabilityClaimSubstanciationCheckResponse.Reason">
+            <summary>
+            Short explanation about the decision.
+            </summary>
+        </member>
+        <member name="T:GenAiIncubator.LlmUtils.Core.Services.SustainabilityClaims.SemanticModels.SustainabilityClaimPlansAndMeasuresCheckResponse">
+            <summary>
+            Structured response for evaluating whether provided content contains sufficient plans and measures for an ambition claim.
+            </summary>
+        </member>
+        <member name="P:GenAiIncubator.LlmUtils.Core.Services.SustainabilityClaims.SemanticModels.SustainabilityClaimPlansAndMeasuresCheckResponse.ProvidesPlansAndMeasures">
+            <summary>
+            Indicates whether the content provides sufficient plans and measures for the ambition claim.
+            </summary>
+        </member>
+        <member name="P:GenAiIncubator.LlmUtils.Core.Services.SustainabilityClaims.SemanticModels.SustainabilityClaimPlansAndMeasuresCheckResponse.Reason">
+            <summary>
+            Short explanation about the decision.
+            </summary>
+        </member>
+        <member name="T:GenAiIncubator.LlmUtils.Core.Services.SustainabilityClaims.SemanticModels.SustainabilityClaimsExtractionResponse">
+            <summary>
+            Represents the response of a call to the sustainability claims extraction service.
+            </summary>
+        </member>
+        <member name="P:GenAiIncubator.LlmUtils.Core.Services.SustainabilityClaims.SemanticModels.SustainabilityClaimsExtractionResponse.Claims">
+            <summary>
+            The extracted sustainability claims.
+            </summary>
+        </member>
+        <member name="T:GenAiIncubator.LlmUtils.Core.Services.SustainabilityClaims.SemanticModels.SustainabilityClaimTopicSelectionResponse">
+            <summary>
+            Response schema for selecting or creating a topic for a claim requiring evidence.
+            </summary>
+        </member>
+        <member name="P:GenAiIncubator.LlmUtils.Core.Services.SustainabilityClaims.SemanticModels.SustainabilityClaimTopicSelectionResponse.TopicName">
+            <summary>
+            The name of the existing topic to reuse (required when ReuseExistingTopic is true).
+            </summary>
+        </member>
+        <member name="P:GenAiIncubator.LlmUtils.Core.Services.SustainabilityClaims.SemanticModels.SustainabilityClaimTopicSelectionResponse.TopicDescription">
+            <summary>
+            The description of the existing topic (optional, echo from input for clarity).
+            </summary>
+        </member>
+        <member name="T:GenAiIncubator.LlmUtils.Core.Services.SustainabilityClaims.SemanticModels.TopicComplianceEvaluationResponse">
+            <summary>
+            Response schema for selecting or creating a topic for a claim requiring evidence.
+            </summary>
+        </member>
+        <member name="P:GenAiIncubator.LlmUtils.Core.Services.SustainabilityClaims.SemanticModels.TopicComplianceEvaluationResponse.IsCompliant">
+            <summary>
+            Indicates whether the claim is compliant with the topic-specific requirement.
+            </summary>
+        </member>
+        <member name="P:GenAiIncubator.LlmUtils.Core.Services.SustainabilityClaims.SemanticModels.TopicComplianceEvaluationResponse.Reasoning">
+            <summary>
+            The reasoning behind the compliance evaluation.
+            </summary>
+        </member>
+        <member name="P:GenAiIncubator.LlmUtils.Core.Services.SustainabilityClaims.SemanticModels.TopicComplianceEvaluationResponse.SuggestedAlternative">
+            <summary>
+            Suggested alternative wording for the claim if it is not compliant (optional).
+            </summary>
+        </member>
+        <member name="P:GenAiIncubator.LlmUtils.Core.Services.SustainabilityClaims.SemanticModels.TopicComplianceEvaluationResponse.Warning">
+            <summary>
+            Warning message if applicable (optional).
+            </summary>
+        </member>
+        <member name="T:GenAiIncubator.LlmUtils.Core.Services.SustainabilityClaims.SustainabilityClaimKnowledge">
+            <summary>
+            Centralized knowledge strings for sustainability claim types and requirement descriptions.
+            Useful for prompt engineering and consistent messaging.
+            </summary>
+        </member>
+        <member name="F:GenAiIncubator.LlmUtils.Core.Services.SustainabilityClaims.SustainabilityClaimKnowledge.ClaimTypeDescriptions">
+            <summary>
+            Maps claim types to natural-language descriptions and examples.
+            </summary>
+        </member>
+        <member name="F:GenAiIncubator.LlmUtils.Core.Services.SustainabilityClaims.SustainabilityClaimKnowledge.RequirementDescriptions">
+            <summary>
+            Maps requirement codes to concise, consumable descriptions for checks and prompts.
+            </summary>
+        </member>
+        <member name="F:GenAiIncubator.LlmUtils.Core.Services.SustainabilityClaims.SustainabilityClaimKnowledge.GeneralRequirements">
+            <summary>
+            General requirements that apply to all sustainability claims.
+            </summary>
+        </member>
+        <member name="F:GenAiIncubator.LlmUtils.Core.Services.SustainabilityClaims.SustainabilityClaimKnowledge.TypeSpecificRequirements">
+            <summary>
+            Type-specific requirements that apply in addition to general requirements.
+            </summary>
+        </member>
+        <member name="M:GenAiIncubator.LlmUtils.Core.Services.SustainabilityClaims.SustainabilityClaimKnowledge.GetApplicableRequirements(GenAiIncubator.LlmUtils.Core.Enums.SustainabilityClaimType)">
+            <summary>
+            Gets all applicable requirements for a given claim type (general + type-specific).
+            </summary>
+            <param name="claimType">The sustainability claim type.</param>
+            <returns>A combined set of all applicable requirement codes.</returns>
+        </member>
+        <member name="T:GenAiIncubator.LlmUtils.Core.Services.SustainabilityClaims.SustainabilityClaimsSemanticService">
+            <summary>
+            Provides semantic (AI-based) operations for sustainability claims.
+            </summary>
+            <param name="kernel">The injected kernel object.</param>
+        </member>
+        <member name="M:GenAiIncubator.LlmUtils.Core.Services.SustainabilityClaims.SustainabilityClaimsSemanticService.#ctor(Microsoft.SemanticKernel.Kernel)">
+            <summary>
+            Provides semantic (AI-based) operations for sustainability claims.
+            </summary>
+            <param name="kernel">The injected kernel object.</param>
+        </member>
+        <member name="M:GenAiIncubator.LlmUtils.Core.Services.SustainabilityClaims.SustainabilityClaimsSemanticService.ExtractSustainabilityClaimsAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Extract all sustainability claims and their types from the provided content.
+            </summary>
+            <param name="normalizedContent">Normalized content from the webpage.</param>
+            <param name="cancellationToken">A token to cancel the operation.</param>
+            <returns>A list of extracted claims with their classified types.</returns>
+        </member>
+        <member name="M:GenAiIncubator.LlmUtils.Core.Services.SustainabilityClaims.SustainabilityClaimsSemanticService.GetTopicForClaimRequiringEvidenceAsync(GenAiIncubator.LlmUtils.Core.Models.SustainabilityClaims.SustainabilityClaim,System.Collections.Generic.Dictionary{System.String,System.String},System.Threading.CancellationToken)">
+            <summary>
+            Determines the most appropriate topic for a claim that requires evidence by attempting to match
+            against existing topic descriptions; if no sufficient match is found, generates a new topic name
+            and uses the claim text as the topic description.
+            </summary>
+            <param name="claim">The sustainability claim.</param>
+            <param name="existingTopics">Existing topics mapped to their descriptions.</param>
+            <param name="cancellationToken">Cancellation token.</param>
+            <returns>A tuple of (topicDescription, topicName).</returns>
+        </member>
+        <member name="M:GenAiIncubator.LlmUtils.Core.Services.SustainabilityClaims.SustainabilityClaimsSemanticService.EvaluateSustainabilityClaimComplianceAsync(GenAiIncubator.LlmUtils.Core.Models.SustainabilityClaims.SustainabilityClaim,System.Threading.CancellationToken)">
+            <summary>
+            Evaluates whether a sustainability claim meets compliance requirements for its type.
+            </summary>
+            <param name="claim">The sustainability claim to evaluate.</param>
+            <param name="cancellationToken">A token to cancel the operation.</param>
+            <returns>A compliance evaluation containing any violations and suggested alternatives.</returns>
+        </member>
+        <member name="M:GenAiIncubator.LlmUtils.Core.Services.SustainabilityClaims.SustainabilityClaimsSemanticService.DoesContentProvideSubstanciationForClaimAsync(GenAiIncubator.LlmUtils.Core.Models.SustainabilityClaims.SustainabilityClaim,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Determines whether the provided content supplies sufficient, accessible substanciation supporting the claim.
+            </summary>
+            <param name="claim">The sustainability claim.</param>
+            <param name="substanciationContent">Normalized content fetched from a related URL (one click away).</param>
+            <param name="cancellationToken">Cancellation token.</param>
+            <returns>True if content provides substanciation for the claim; otherwise false.</returns>
+        </member>
+        <member name="M:GenAiIncubator.LlmUtils.Core.Services.SustainabilityClaims.SustainabilityClaimsSemanticService.DoesContentProvidePlansAndMeasuresForClaimAsync(GenAiIncubator.LlmUtils.Core.Models.SustainabilityClaims.SustainabilityClaim,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Determines whether the provided content contains sufficient plans and measures supporting an ambition claim.
+            </summary>
+            <param name="claim">The sustainability ambition claim.</param>
+            <param name="evidenceContent">Normalized content fetched from a related URL (one click away).</param>
+            <param name="cancellationToken">Cancellation token.</param>
+            <returns>True if content provides plans and measures for the ambition claim; otherwise false.</returns>
+        </member>
+        <member name="T:GenAiIncubator.LlmUtils.Core.Services.SustainabilityClaims.SustainabilityClaimsService">
+            <summary>
+            Provides the orchestration and pluggable steps for checking sustainability claims
+            on a webpage or document according to ACM/CDR/UCPD-aligned requirements.
+            </summary>
+            <param name="webContentNormalizationService">Service that fetches and normalizes webpage content.</param>
+            <param name="sustainabilityClaimsSemanticService">Service that extracts sustainability claims and evaluates their compliance.</param>
+            <param name="topicSpecificRequirementChecks">List of services that checks the topic specific requirement.</param>
+        </member>
+        <member name="M:GenAiIncubator.LlmUtils.Core.Services.SustainabilityClaims.SustainabilityClaimsService.#ctor(GenAiIncubator.LlmUtils.Core.Services.WebContentNormalization.IWebContentNormalizationService,GenAiIncubator.LlmUtils.Core.Services.SustainabilityClaims.ISustainabilityClaimsSemanticService,System.Collections.Generic.List{GenAiIncubator.LlmUtils.Core.Services.SustainabilityClaims.TopicSpecificRequirementCheck})">
+            <summary>
+            Provides the orchestration and pluggable steps for checking sustainability claims
+            on a webpage or document according to ACM/CDR/UCPD-aligned requirements.
+            </summary>
+            <param name="webContentNormalizationService">Service that fetches and normalizes webpage content.</param>
+            <param name="sustainabilityClaimsSemanticService">Service that extracts sustainability claims and evaluates their compliance.</param>
+            <param name="topicSpecificRequirementChecks">List of services that checks the topic specific requirement.</param>
+        </member>
+        <member name="M:GenAiIncubator.LlmUtils.Core.Services.SustainabilityClaims.SustainabilityClaimsService.CheckSustainabilityClaimsAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Main orchestration entry point. Intended flow:
+            1) Fetch and normalize content from the URL
+            2) Extract sustainability claims and their types
+            3) Evaluate claims against general and type-specific requirements; propose alternatives
+            4) Aggregate results and return
+            </summary>
+            <param name="url">The URL of the page to analyze.</param>
+            <param name="cancellationToken">A token to cancel the operation.</param>
+            <returns>The overall sustainability check result.</returns>
+        </member>
+        <member name="M:GenAiIncubator.LlmUtils.Core.Services.SustainabilityClaims.SustainabilityClaimsService.CheckSustainabilityClaimsAsyncFromStringContent(System.String,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Checks sustainability claims from provided string content.
+            </summary>
+            <param name="normalizedContent"></param>
+            <param name="url"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GenAiIncubator.LlmUtils.Core.Services.SustainabilityClaims.SustainabilityClaimsService.ProcessRequirementSpecificChecksAsync(System.Collections.Generic.List{GenAiIncubator.LlmUtils.Core.Models.SustainabilityClaims.SustainabilityClaimComplianceEvaluation},System.Threading.CancellationToken)">
+            <summary>
+            Processes requirement-specific checks by examining related URLs for additional evidence.
+            This method is designed to be extensible for future requirement types.
+            </summary>
+            <param name="evaluations">The list of claim compliance evaluations to process.</param>
+            <param name="cancellationToken">A token to cancel the operation.</param>
+        </member>
+        <member name="M:GenAiIncubator.LlmUtils.Core.Services.SustainabilityClaims.SustainabilityClaimsService.CheckRequirementAsync(GenAiIncubator.LlmUtils.Core.Enums.RequirementCode,GenAiIncubator.LlmUtils.Core.Models.SustainabilityClaims.SustainabilityClaim,System.Threading.CancellationToken)">
+            <summary>
+            Checks a specific requirement by examining the claim and its related content.
+            </summary>
+            <param name="requirementCode">The requirement code to check.</param>
+            <param name="claim">The sustainability claim.</param>
+            <param name="cancellationToken">A token to cancel the operation.</param>
+            <returns>True if the requirement is satisfied; otherwise false.</returns>
+        </member>
+        <member name="M:GenAiIncubator.LlmUtils.Core.Services.SustainabilityClaims.SustainabilityClaimsService.CheckSubstanciationRequirementAsync(GenAiIncubator.LlmUtils.Core.Models.SustainabilityClaims.SustainabilityClaim,System.Threading.CancellationToken)">
+            <summary>
+            Checks evidence requirements by examining related URLs.
+            </summary>
+            <param name="claim">The sustainability claim.</param>
+            <param name="cancellationToken">A token to cancel the operation.</param>
+            <returns>True if evidence is found; otherwise false.</returns>
+        </member>
+        <member name="M:GenAiIncubator.LlmUtils.Core.Services.SustainabilityClaims.SustainabilityClaimsService.CheckPlansAndMeasuresRequirementAsync(GenAiIncubator.LlmUtils.Core.Models.SustainabilityClaims.SustainabilityClaim,System.Threading.CancellationToken)">
+            <summary>
+            Checks plans and measures requirements by examining related URLs.
+            </summary>
+            <param name="claim">The sustainability claim.</param>
+            <param name="cancellationToken">A token to cancel the operation.</param>
+            <returns>True if plans and measures are found; otherwise false.</returns>
+        </member>
+        <member name="M:GenAiIncubator.LlmUtils.Core.Services.SustainabilityClaims.SustainabilityClaimsService.CheckUrlsAsync(GenAiIncubator.LlmUtils.Core.Models.SustainabilityClaims.SustainabilityClaim,System.Func{System.String,System.Threading.CancellationToken,System.Threading.Tasks.Task{System.Boolean}},System.Threading.CancellationToken)">
+            <summary>
+            Generic method to check URLs for a specific requirement.
+            </summary>
+            <param name="claim">The sustainability claim.</param>
+            <param name="requirementCheck">The function to check the requirement against content.</param>
+            <param name="cancellationToken">A token to cancel the operation.</param>
+            <returns>True if the requirement is satisfied by any URL; otherwise false.</returns>
+        </member>
+        <member name="M:GenAiIncubator.LlmUtils.Core.Services.SustainabilityClaims.SustainabilityClaimsService.TryFetchContentFromUrlAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Attempts to fetch and normalize content from a URL if it's a valid HTTP/HTTPS URL.
+            </summary>
+            <param name="url">The URL to fetch content from.</param>
+            <param name="cancellationToken">A token to cancel the operation.</param>
+            <returns>The normalized content if successful, null if the URL is invalid or fetch fails.</returns>
+        </member>
+        <member name="T:GenAiIncubator.LlmUtils.Core.Services.SustainabilityClaims.TopicComplianceChecks.ComparisonRequirementCheck">
+            <summary>
+            Implementation of the CO2 neutral topic-specific requirement.
+            </summary>
+        </member>
+        <member name="M:GenAiIncubator.LlmUtils.Core.Services.SustainabilityClaims.TopicComplianceChecks.ComparisonRequirementCheck.#ctor(Microsoft.SemanticKernel.Kernel,GenAiIncubator.LlmUtils.Core.Services.WebContentNormalization.IWebContentNormalizationService)">
+            <summary>
+            Implementation of the CO2 neutral topic-specific requirement.
+            </summary>
+        </member>
+        <member name="P:GenAiIncubator.LlmUtils.Core.Services.SustainabilityClaims.TopicComplianceChecks.ComparisonRequirementCheck.AssociatedRequirementCode">
+            <inheritdoc />
+        </member>
+        <member name="P:GenAiIncubator.LlmUtils.Core.Services.SustainabilityClaims.TopicComplianceChecks.ComparisonRequirementCheck.AssociatedTopic">
+            <inheritdoc />
+        </member>
+        <member name="M:GenAiIncubator.LlmUtils.Core.Services.SustainabilityClaims.TopicComplianceChecks.ComparisonRequirementCheck.CheckRequirementAsync(GenAiIncubator.LlmUtils.Core.Models.SustainabilityClaims.SustainabilityClaim,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Checks the sustainable production requirement.
+            </summary>
+            <param name="claim"></param>
+            <param name="sourceContent"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+            <exception cref="T:System.InvalidOperationException"></exception>
+        </member>
+        <member name="T:GenAiIncubator.LlmUtils.Core.Services.SustainabilityClaims.TopicComplianceChecks.EnergyLabelRequirementCheck">
+            <summary>
+            Implementation of the green electricity topic-specific requirement.
+            </summary>
+        </member>
+        <member name="M:GenAiIncubator.LlmUtils.Core.Services.SustainabilityClaims.TopicComplianceChecks.EnergyLabelRequirementCheck.#ctor(Microsoft.SemanticKernel.Kernel)">
+            <summary>
+            Implementation of the green electricity topic-specific requirement.
+            </summary>
+        </member>
+        <member name="P:GenAiIncubator.LlmUtils.Core.Services.SustainabilityClaims.TopicComplianceChecks.EnergyLabelRequirementCheck.AssociatedRequirementCode">
+            <inheritdoc />
+        </member>
+        <member name="P:GenAiIncubator.LlmUtils.Core.Services.SustainabilityClaims.TopicComplianceChecks.EnergyLabelRequirementCheck.AssociatedTopic">
+            <inheritdoc />
+        </member>
+        <member name="M:GenAiIncubator.LlmUtils.Core.Services.SustainabilityClaims.TopicComplianceChecks.EnergyLabelRequirementCheck.CheckRequirementAsync(GenAiIncubator.LlmUtils.Core.Models.SustainabilityClaims.SustainabilityClaim,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Check requirements related to energy labels (electricity and heat). 
+            </summary>
+            <param name="claim"></param>
+            <param name="sourceContent"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+            <exception cref="T:System.InvalidOperationException"></exception>
+        </member>
+        <member name="T:GenAiIncubator.LlmUtils.Core.Services.SustainabilityClaims.TopicComplianceChecks.FossilFreeLivingRequirementCheck">
+            <summary>
+            Implementation of the fossil-free living in one generation topic-specific requirement.
+            </summary>
+        </member>
+        <member name="M:GenAiIncubator.LlmUtils.Core.Services.SustainabilityClaims.TopicComplianceChecks.FossilFreeLivingRequirementCheck.#ctor(Microsoft.SemanticKernel.Kernel)">
+            <summary>
+            Implementation of the fossil-free living in one generation topic-specific requirement.
+            </summary>
+        </member>
+        <member name="P:GenAiIncubator.LlmUtils.Core.Services.SustainabilityClaims.TopicComplianceChecks.FossilFreeLivingRequirementCheck.AssociatedRequirementCode">
+            <inheritdoc />
+        </member>
+        <member name="P:GenAiIncubator.LlmUtils.Core.Services.SustainabilityClaims.TopicComplianceChecks.FossilFreeLivingRequirementCheck.AssociatedTopic">
+            <inheritdoc />
+        </member>
+        <member name="M:GenAiIncubator.LlmUtils.Core.Services.SustainabilityClaims.TopicComplianceChecks.FossilFreeLivingRequirementCheck.CheckRequirementAsync(GenAiIncubator.LlmUtils.Core.Models.SustainabilityClaims.SustainabilityClaim,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Checks the sustainable production requirement.
+            </summary>
+            <param name="claim"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+            <exception cref="T:System.InvalidOperationException"></exception>
+        </member>
+        <member name="T:GenAiIncubator.LlmUtils.Core.Services.SustainabilityClaims.TopicComplianceChecks.GreenElectricityRequirementCheck">
+            <summary>
+            Implementation of the green electricity topic-specific requirement.
+            </summary>
+        </member>
+        <member name="M:GenAiIncubator.LlmUtils.Core.Services.SustainabilityClaims.TopicComplianceChecks.GreenElectricityRequirementCheck.#ctor(Microsoft.SemanticKernel.Kernel)">
+            <summary>
+            Implementation of the green electricity topic-specific requirement.
+            </summary>
+        </member>
+        <member name="P:GenAiIncubator.LlmUtils.Core.Services.SustainabilityClaims.TopicComplianceChecks.GreenElectricityRequirementCheck.AssociatedRequirementCode">
+            <inheritdoc />
+        </member>
+        <member name="P:GenAiIncubator.LlmUtils.Core.Services.SustainabilityClaims.TopicComplianceChecks.GreenElectricityRequirementCheck.AssociatedTopic">
+            <inheritdoc />
+        </member>
+        <member name="F:GenAiIncubator.LlmUtils.Core.Services.SustainabilityClaims.TopicComplianceChecks.GreenElectricityRequirementCheck.ElectricityConsumerLabelUrl">
+            <summary>
+            Consumer stroometiket URL
+            </summary>
+        </member>
+        <member name="F:GenAiIncubator.LlmUtils.Core.Services.SustainabilityClaims.TopicComplianceChecks.GreenElectricityRequirementCheck.ElectricityBusinessLabelUrl">
+            <summary>
+            Business stroometiket URL
+            </summary>
+        </member>
+        <member name="M:GenAiIncubator.LlmUtils.Core.Services.SustainabilityClaims.TopicComplianceChecks.GreenElectricityRequirementCheck.CheckRequirementAsync(GenAiIncubator.LlmUtils.Core.Models.SustainabilityClaims.SustainabilityClaim,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Checks the green electricity requirement.
+            </summary>
+            <param name="claim"></param>
+            <param name="sourceContent"></param>
+            <param name="cancellationToken"></param>
+            <returns>A list of compliancy evaluations </returns>
+            <exception cref="T:System.InvalidOperationException"></exception>
+        </member>
+        <member name="T:GenAiIncubator.LlmUtils.Core.Services.SustainabilityClaims.TopicComplianceChecks.GreenGasRequirementCheck">
+            <summary>
+            Implementation of the green gas topic-specific requirement.
+            </summary>
+        </member>
+        <member name="M:GenAiIncubator.LlmUtils.Core.Services.SustainabilityClaims.TopicComplianceChecks.GreenGasRequirementCheck.#ctor(Microsoft.SemanticKernel.Kernel)">
+            <summary>
+            Implementation of the green gas topic-specific requirement.
+            </summary>
+        </member>
+        <member name="P:GenAiIncubator.LlmUtils.Core.Services.SustainabilityClaims.TopicComplianceChecks.GreenGasRequirementCheck.AssociatedRequirementCode">
+            <inheritdoc />
+        </member>
+        <member name="P:GenAiIncubator.LlmUtils.Core.Services.SustainabilityClaims.TopicComplianceChecks.GreenGasRequirementCheck.AssociatedTopic">
+            <inheritdoc />
+        </member>
+        <member name="M:GenAiIncubator.LlmUtils.Core.Services.SustainabilityClaims.TopicComplianceChecks.GreenGasRequirementCheck.CheckRequirementAsync(GenAiIncubator.LlmUtils.Core.Models.SustainabilityClaims.SustainabilityClaim,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Checks the green gas topic-specific requirement.
+            </summary>
+            <param name="claim"></param>
+            <param name="sourceContent">Broader page/context content that may provide required clarifications.</param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+        </member>
+        <member name="T:GenAiIncubator.LlmUtils.Core.Services.SustainabilityClaims.TopicComplianceChecks.HeatRequirementCheck">
+            <summary>
+            Implementation of the heat topic-specific requirement.
+            </summary>
+        </member>
+        <member name="M:GenAiIncubator.LlmUtils.Core.Services.SustainabilityClaims.TopicComplianceChecks.HeatRequirementCheck.#ctor(Microsoft.SemanticKernel.Kernel)">
+            <summary>
+            Implementation of the heat topic-specific requirement.
+            </summary>
+        </member>
+        <member name="P:GenAiIncubator.LlmUtils.Core.Services.SustainabilityClaims.TopicComplianceChecks.HeatRequirementCheck.AssociatedRequirementCode">
+            <inheritdoc />
+        </member>
+        <member name="P:GenAiIncubator.LlmUtils.Core.Services.SustainabilityClaims.TopicComplianceChecks.HeatRequirementCheck.AssociatedTopic">
+            <inheritdoc />
+        </member>
+        <member name="M:GenAiIncubator.LlmUtils.Core.Services.SustainabilityClaims.TopicComplianceChecks.HeatRequirementCheck.CheckRequirementAsync(GenAiIncubator.LlmUtils.Core.Models.SustainabilityClaims.SustainabilityClaim,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Checks the heat requirement.
+            </summary>
+            <param name="claim"></param>
+            <param name="sourceContent"></param>
+            <param name="cancellationToken"></param>
+            <returns></returns>
+            <exception cref="T:System.InvalidOperationException"></exception>
+        </member>
+        <member name="T:GenAiIncubator.LlmUtils.Core.Services.SustainabilityClaims.TopicComplianceChecks.SuperlativesRequirementCheck">
+            <summary>
+            Dedicated check for superlative claims ("most", "best", "largest", etc.).
+            Determines compliance only when independent, up-to-date, verifiable evidence is present.
+            </summary>
+        </member>
+        <member name="M:GenAiIncubator.LlmUtils.Core.Services.SustainabilityClaims.TopicComplianceChecks.SuperlativesRequirementCheck.#ctor(Microsoft.SemanticKernel.Kernel)">
+            <summary>
+            Dedicated check for superlative claims ("most", "best", "largest", etc.).
+            Determines compliance only when independent, up-to-date, verifiable evidence is present.
+            </summary>
+        </member>
+        <member name="P:GenAiIncubator.LlmUtils.Core.Services.SustainabilityClaims.TopicComplianceChecks.SuperlativesRequirementCheck.AssociatedRequirementCode">
+            <inheritdoc/>
+        </member>
+        <member name="P:GenAiIncubator.LlmUtils.Core.Services.SustainabilityClaims.TopicComplianceChecks.SuperlativesRequirementCheck.AssociatedTopic">
+            <inheritdoc/>
+        </member>
+        <member name="M:GenAiIncubator.LlmUtils.Core.Services.SustainabilityClaims.TopicComplianceChecks.SuperlativesRequirementCheck.CheckRequirementAsync(GenAiIncubator.LlmUtils.Core.Models.SustainabilityClaims.SustainabilityClaim,System.String,System.Threading.CancellationToken)">
+            <inheritdoc/>
+        </member>
+        <member name="T:GenAiIncubator.LlmUtils.Core.Services.SustainabilityClaims.TopicComplianceChecks.TopicChecksExtensions">
+            <summary>
+            Extension methods on <see cref="T:Microsoft.SemanticKernel.Kernel"/> to support reusable execution of topic compliance sub-checks.
+            </summary>
+        </member>
+        <member name="M:GenAiIncubator.LlmUtils.Core.Services.SustainabilityClaims.TopicComplianceChecks.TopicChecksExtensions.ExecuteTopicSubCheckAsync(Microsoft.SemanticKernel.Kernel,System.String,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Executes a single sub-check prompt against the LLM and parses a <see cref="T:GenAiIncubator.LlmUtils.Core.Services.SustainabilityClaims.SemanticModels.TopicComplianceEvaluationResponse"/>.
+            Adds the sub-check name as a prefix to the reasoning. Returns a standardized failure object if parsing fails.
+            </summary>
+            <param name="kernel">Semantic Kernel instance.</param>
+            <param name="name">Human-readable sub-check identifier.</param>
+            <param name="prompt">Prompt to execute.</param>
+            <param name="cancellationToken">Cancellation token.</param>
+            <returns>The parsed or fallback compliance evaluation response.</returns>
+        </member>
+        <member name="T:GenAiIncubator.LlmUtils.Core.Services.SustainabilityClaims.TopicSpecificRequirementCheck">
+            <summary>
+            Abstract base class for topic-specific requirements.
+            </summary>
+        </member>
+        <member name="P:GenAiIncubator.LlmUtils.Core.Services.SustainabilityClaims.TopicSpecificRequirementCheck.AssociatedRequirementCode">
+            <summary>
+            The requirement code associated with the topic-specific requirement.
+            </summary>
+        </member>
+        <member name="P:GenAiIncubator.LlmUtils.Core.Services.SustainabilityClaims.TopicSpecificRequirementCheck.AssociatedTopic">
+            <summary>
+            The sustainability topic associated with the requirement.
+            </summary>
+        </member>
+        <member name="M:GenAiIncubator.LlmUtils.Core.Services.SustainabilityClaims.TopicSpecificRequirementCheck.CheckTopicComplianceAsync(GenAiIncubator.LlmUtils.Core.Models.SustainabilityClaims.SustainabilityClaim,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Checks the topic-specific requirement.      
+            </summary>
+            <param name="claim">The sustainability claim to evaluate.</param>
+            <param name="sourceContent">Source content containing the claim.</param>
+            <param name="cancellationToken">Cancellation token.</param>
+            <returns>A sustainability claim compliance evaluation.</returns>
+        </member>
+        <member name="M:GenAiIncubator.LlmUtils.Core.Services.SustainabilityClaims.TopicSpecificRequirementCheck.CheckTopicComplianceAsync(System.Collections.Generic.List{GenAiIncubator.LlmUtils.Core.Models.SustainabilityClaims.SustainabilityClaim},System.String,System.Threading.CancellationToken)">
+            <summary>
+            Checks the topic-specific requirement for a list of claims.
+            If topic requires checking on multiple claims, this method can be overridden to provide optimized implementation.
+            </summary>
+            <param name="claims">List of sustainability claims to evaluate.</param>
+            <param name="sourceContent">Source content containing the claims.</param>
+            <param name="cancellationToken">Cancellation token.</param>
+            <returns>A list of sustainability claim compliance evaluations.</returns>
+        </member>
+        <member name="M:GenAiIncubator.LlmUtils.Core.Services.SustainabilityClaims.TopicSpecificRequirementCheck.CheckRequirementAsync(GenAiIncubator.LlmUtils.Core.Models.SustainabilityClaims.SustainabilityClaim,System.String,System.Threading.CancellationToken)">
+            <summary>
+            Checks the topic-specific requirement.
+            </summary>
+            <param name="claim">The sustainability claim to evaluate.</param>
+            <param name="sourceContent"></param>
+            <param name="cancellationToken">Cancellation token.</param>
+            <returns>A topic compliance evaluation response.</returns>
+        </member>
+        <member name="T:GenAiIncubator.LlmUtils.Core.Services.UnwantedDataClassification.UnwantedDataClassificationSemanticService">
+            <summary>
+            Provides semantic (AI-based) operations for unwanted data classification.
+            </summary>
+            <remarks>
+            Initializes a new instance of the <see cref="T:GenAiIncubator.LlmUtils.Core.Services.UnwantedDataClassification.UnwantedDataClassificationSemanticService"/> class.
+            </remarks>
+            <param name="kernel">The injected kernel object.</param>
+        </member>
+        <member name="M:GenAiIncubator.LlmUtils.Core.Services.UnwantedDataClassification.UnwantedDataClassificationSemanticService.#ctor(Microsoft.SemanticKernel.Kernel)">
+            <summary>
+            Provides semantic (AI-based) operations for unwanted data classification.
+            </summary>
+            <remarks>
+            Initializes a new instance of the <see cref="T:GenAiIncubator.LlmUtils.Core.Services.UnwantedDataClassification.UnwantedDataClassificationSemanticService"/> class.
+            </remarks>
+            <param name="kernel">The injected kernel object.</param>
+        </member>
+        <member name="M:GenAiIncubator.LlmUtils.Core.Services.UnwantedDataClassification.UnwantedDataClassificationSemanticService.ClassifyUnwantedDataAsync(GenAiIncubator.LlmUtils.Core.Models.ParsedDocument,System.Threading.CancellationToken)">
+            <summary>
+            Performs the initial classification of unwanted data in a document using AI.
+            </summary>
+            <param name="parsedDocument">The parsed document containing text and images.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns>The classification result.</returns>
+        </member>
+        <member name="M:GenAiIncubator.LlmUtils.Core.Services.UnwantedDataClassification.UnwantedDataClassificationSemanticService.ExtractBsnFromDocumentAsync(GenAiIncubator.LlmUtils.Core.Models.ParsedDocument,System.Boolean,System.Threading.CancellationToken)">
+            <summary>
+            Extracts BSN from a document using AI with multiple attempts to mitigate hallucinations.
+            </summary>
+            <param name="parsedDocument">The parsed document containing images.</param>
+            <param name="isPassport">True if the document is an image of a passport.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns>The first non-empty extracted BSN or empty string if none found.</returns>
+        </member>
+        <member name="T:GenAiIncubator.LlmUtils.Core.Services.UnwantedDataClassification.UnwantedDataClassificationService">
+            <summary>
+            Provides a service for recognizing unwanted data in documents with additional validation logic.
+            </summary>
+            <remarks>
+            Initializes a new instance of the <see cref="T:GenAiIncubator.LlmUtils.Core.Services.UnwantedDataClassification.UnwantedDataClassificationService"/> class.
+            </remarks>
+            <param name="semanticService">The semantic service for AI operations.</param>
+            <param name="documentParser">The document parser for handling various file formats.</param>
+        </member>
+        <member name="M:GenAiIncubator.LlmUtils.Core.Services.UnwantedDataClassification.UnwantedDataClassificationService.#ctor(GenAiIncubator.LlmUtils.Core.Services.UnwantedDataClassification.UnwantedDataClassificationSemanticService,GenAiIncubator.LlmUtils.Core.Services.DocumentParsing.IDocumentParser)">
+            <summary>
+            Provides a service for recognizing unwanted data in documents with additional validation logic.
+            </summary>
+            <remarks>
+            Initializes a new instance of the <see cref="T:GenAiIncubator.LlmUtils.Core.Services.UnwantedDataClassification.UnwantedDataClassificationService"/> class.
+            </remarks>
+            <param name="semanticService">The semantic service for AI operations.</param>
+            <param name="documentParser">The document parser for handling various file formats.</param>
+        </member>
+        <member name="M:GenAiIncubator.LlmUtils.Core.Services.UnwantedDataClassification.UnwantedDataClassificationService.CheckForUnwantedData(System.Byte[],System.String,System.Threading.CancellationToken)">
+            <summary>
+            Checks if a document contains unwanted data, such as PII or sensitive information.
+            Performs additional validation for BSN data when detected.
+            </summary>
+            <param name="document">The document to check.</param>
+            <param name="documentExtension">The extension of the document to check (png, jpg, pdf...).</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns>The classification result.</returns>
+        </member>
+        <member name="M:GenAiIncubator.LlmUtils.Core.Services.UnwantedDataClassification.UnwantedDataClassificationService.ValidateBsnDataAsync(GenAiIncubator.LlmUtils.Core.Models.UnwantedDataClassificationResponse,GenAiIncubator.LlmUtils.Core.Models.ParsedDocument,System.Boolean,System.Threading.CancellationToken)">
+            <summary>
+            Validates BSN data in the document and updates the response accordingly.
+            </summary>
+            <param name="response">The initial classification response.</param>
+            <param name="parsedDocument">The parsed document content.</param>
+            <param name="isPassport">True if the document is a passport.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns>The updated classification response.</returns>
+        </member>
+        <member name="T:GenAiIncubator.LlmUtils.Core.Services.UserStoryCreationService">
+            <summary>
+            Provides functionality to create user stories from input requirements.
+            </summary>
+        </member>
+        <member name="M:GenAiIncubator.LlmUtils.Core.Services.UserStoryCreationService.#ctor(Microsoft.SemanticKernel.Kernel)">
+            <summary>
+            Provides functionality to create user stories from input requirements.
+            </summary>
+        </member>
+        <member name="M:GenAiIncubator.LlmUtils.Core.Services.UserStoryCreationService.CreateUserStoryAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Generates a user story based on the provided requirements.
+            </summary>
+            <param name="transcription"></param>
+            <param name="cancellationToken">Optional. The cancellation token.</param>
+            <returns>The generated user story.</returns>
+        </member>
+        <member name="T:GenAiIncubator.LlmUtils.Core.Services.WebContentNormalization.IWebContentNormalizationService">
+            <summary>
+            Fetches webpage content and normalizes it into LLM-friendly plain text.
+            </summary>
+        </member>
+        <member name="M:GenAiIncubator.LlmUtils.Core.Services.WebContentNormalization.IWebContentNormalizationService.FetchAndNormalizeAsync(System.String,System.Threading.CancellationToken)">
+            <summary>
+            Fetches the content at the specified URL and returns a cleaned, normalized text.
+            </summary>
+            <param name="url">The URL of the webpage.</param>
+            <param name="cancellationToken">A token to cancel the operation.</param>
+            <returns>Normalized, LLM-ready text extracted from the webpage.</returns>
+        </member>
+        <member name="T:GenAiIncubator.LlmUtils.Core.Services.WebContentNormalization.WebContentNormalizationService">
+            <summary>
+            Default implementation that fetches a webpage and converts it into normalized text for LLM consumption.
+            </summary>
+        </member>
+        <member name="M:GenAiIncubator.LlmUtils.Core.Services.WebContentNormalization.WebContentNormalizationService.#ctor(System.Net.Http.HttpClient)">
+            <summary>
+            Default implementation that fetches a webpage and converts it into normalized text for LLM consumption.
+            </summary>
+        </member>
+        <member name="M:GenAiIncubator.LlmUtils.Core.Services.WebContentNormalization.WebContentNormalizationService.MultipleLineBreaksRegex">
+            <remarks>
+            Pattern:<br/>
+            <code>\\n\\s*\\n\\s*\\n+</code><br/>
+            Explanation:<br/>
+            <code>
+            ○ Match '\n'.<br/>
+            ○ Match a whitespace character greedily any number of times.<br/>
+            ○ Match '\n'.<br/>
+            ○ Match a whitespace character greedily any number of times.<br/>
+            ○ Match '\n' atomically at least once.<br/>
+            </code>
+            </remarks>
+        </member>
+        <member name="M:GenAiIncubator.LlmUtils.Core.Services.WebContentNormalization.WebContentNormalizationService.MultipleSpacesRegex">
+            <remarks>
+            Pattern:<br/>
+            <code>[ \\t]+</code><br/>
+            Explanation:<br/>
+            <code>
+            ○ Match a character in the set [\t ] atomically at least once.<br/>
+            </code>
+            </remarks>
+        </member>
+        <member name="M:GenAiIncubator.LlmUtils.Core.Services.WebContentNormalization.WebContentNormalizationService.FetchAndNormalizeAsync(System.String,System.Threading.CancellationToken)">
+            <inheritdoc />
+        </member>
+        <member name="T:GenAiIncubator.LlmUtils.Core.Services.WhisperTranscriptionService">
+            <summary>
+            Provides transcription services using the Whisper model from Azure OpenAI.
+            </summary>
+            <remarks>
+            This service utilizes the AzureOpenAIClient to transcribe audio files into text using the Whisper model.
+            </remarks>
+        </member>
+        <member name="M:GenAiIncubator.LlmUtils.Core.Services.WhisperTranscriptionService.#ctor(GenAiIncubator.LlmUtils.Core.Options.KernelOptions)">
+            <summary>
+            Initializes a new instance of the <see cref="T:GenAiIncubator.LlmUtils.Core.Services.WhisperTranscriptionService"/> class.
+            </summary>
+            <param name="kernelOptions">Options holding endpoint and api key of the azure openai instance.</param>
+        </member>
+        <member name="M:GenAiIncubator.LlmUtils.Core.Services.WhisperTranscriptionService.TranscribeAudioAsync(System.String)">
+            <summary>
+            Transcribes the audio file at the specified path into text using the Whisper model.
+            </summary>
+            <param name="audioFilePath">The path to the audio file to be transcribed.</param>
+            <returns>A task that represents the asynchronous operation. The task result contains the transcribed text.</returns>
+        </member>
+        <member name="T:System.Text.RegularExpressions.Generated.MultipleLineBreaksRegex_0">
+            <summary>Custom <see cref="T:System.Text.RegularExpressions.Regex"/>-derived type for the MultipleLineBreaksRegex method.</summary>
+        </member>
+        <member name="F:System.Text.RegularExpressions.Generated.MultipleLineBreaksRegex_0.Instance">
+            <summary>Cached, thread-safe singleton instance.</summary>
+        </member>
+        <member name="M:System.Text.RegularExpressions.Generated.MultipleLineBreaksRegex_0.#ctor">
+            <summary>Initializes the instance.</summary>
+        </member>
+        <member name="T:System.Text.RegularExpressions.Generated.MultipleLineBreaksRegex_0.RunnerFactory">
+            <summary>Provides a factory for creating <see cref="T:System.Text.RegularExpressions.RegexRunner"/> instances to be used by methods on <see cref="T:System.Text.RegularExpressions.Regex"/>.</summary>
+        </member>
+        <member name="M:System.Text.RegularExpressions.Generated.MultipleLineBreaksRegex_0.RunnerFactory.CreateInstance">
+            <summary>Creates an instance of a <see cref="T:System.Text.RegularExpressions.RegexRunner"/> used by methods on <see cref="T:System.Text.RegularExpressions.Regex"/>.</summary>
+        </member>
+        <member name="T:System.Text.RegularExpressions.Generated.MultipleLineBreaksRegex_0.RunnerFactory.Runner">
+            <summary>Provides the runner that contains the custom logic implementing the specified regular expression.</summary>
+        </member>
+        <member name="M:System.Text.RegularExpressions.Generated.MultipleLineBreaksRegex_0.RunnerFactory.Runner.Scan(System.ReadOnlySpan{System.Char})">
+            <summary>Scan the <paramref name="inputSpan"/> starting from base.runtextstart for the next match.</summary>
+            <param name="inputSpan">The text being scanned by the regular expression.</param>
+        </member>
+        <member name="M:System.Text.RegularExpressions.Generated.MultipleLineBreaksRegex_0.RunnerFactory.Runner.TryFindNextPossibleStartingPosition(System.ReadOnlySpan{System.Char})">
+            <summary>Search <paramref name="inputSpan"/> starting from base.runtextpos for the next location a match could possibly start.</summary>
+            <param name="inputSpan">The text being scanned by the regular expression.</param>
+            <returns>true if a possible match was found; false if no more matches are possible.</returns>
+        </member>
+        <member name="M:System.Text.RegularExpressions.Generated.MultipleLineBreaksRegex_0.RunnerFactory.Runner.TryMatchAtCurrentPosition(System.ReadOnlySpan{System.Char})">
+            <summary>Determine whether <paramref name="inputSpan"/> at base.runtextpos is a match for the regular expression.</summary>
+            <param name="inputSpan">The text being scanned by the regular expression.</param>
+            <returns>true if the regular expression matches at the current position; otherwise, false.</returns>
+        </member>
+        <member name="T:System.Text.RegularExpressions.Generated.MultipleSpacesRegex_1">
+            <summary>Custom <see cref="T:System.Text.RegularExpressions.Regex"/>-derived type for the MultipleSpacesRegex method.</summary>
+        </member>
+        <member name="F:System.Text.RegularExpressions.Generated.MultipleSpacesRegex_1.Instance">
+            <summary>Cached, thread-safe singleton instance.</summary>
+        </member>
+        <member name="M:System.Text.RegularExpressions.Generated.MultipleSpacesRegex_1.#ctor">
+            <summary>Initializes the instance.</summary>
+        </member>
+        <member name="T:System.Text.RegularExpressions.Generated.MultipleSpacesRegex_1.RunnerFactory">
+            <summary>Provides a factory for creating <see cref="T:System.Text.RegularExpressions.RegexRunner"/> instances to be used by methods on <see cref="T:System.Text.RegularExpressions.Regex"/>.</summary>
+        </member>
+        <member name="M:System.Text.RegularExpressions.Generated.MultipleSpacesRegex_1.RunnerFactory.CreateInstance">
+            <summary>Creates an instance of a <see cref="T:System.Text.RegularExpressions.RegexRunner"/> used by methods on <see cref="T:System.Text.RegularExpressions.Regex"/>.</summary>
+        </member>
+        <member name="T:System.Text.RegularExpressions.Generated.MultipleSpacesRegex_1.RunnerFactory.Runner">
+            <summary>Provides the runner that contains the custom logic implementing the specified regular expression.</summary>
+        </member>
+        <member name="M:System.Text.RegularExpressions.Generated.MultipleSpacesRegex_1.RunnerFactory.Runner.Scan(System.ReadOnlySpan{System.Char})">
+            <summary>Scan the <paramref name="inputSpan"/> starting from base.runtextstart for the next match.</summary>
+            <param name="inputSpan">The text being scanned by the regular expression.</param>
+        </member>
+        <member name="M:System.Text.RegularExpressions.Generated.MultipleSpacesRegex_1.RunnerFactory.Runner.TryFindNextPossibleStartingPosition(System.ReadOnlySpan{System.Char})">
+            <summary>Search <paramref name="inputSpan"/> starting from base.runtextpos for the next location a match could possibly start.</summary>
+            <param name="inputSpan">The text being scanned by the regular expression.</param>
+            <returns>true if a possible match was found; false if no more matches are possible.</returns>
+        </member>
+        <member name="M:System.Text.RegularExpressions.Generated.MultipleSpacesRegex_1.RunnerFactory.Runner.TryMatchAtCurrentPosition(System.ReadOnlySpan{System.Char})">
+            <summary>Determine whether <paramref name="inputSpan"/> at base.runtextpos is a match for the regular expression.</summary>
+            <param name="inputSpan">The text being scanned by the regular expression.</param>
+            <returns>true if the regular expression matches at the current position; otherwise, false.</returns>
+        </member>
+        <member name="T:System.Text.RegularExpressions.Generated.Utilities">
+            <summary>Helper methods used by generated <see cref="T:System.Text.RegularExpressions.Regex"/>-derived implementations.</summary>
+        </member>
+        <member name="F:System.Text.RegularExpressions.Generated.Utilities.s_defaultTimeout">
+            <summary>Default timeout value set in <see cref="T:System.AppContext"/>, or <see cref="F:System.Text.RegularExpressions.Regex.InfiniteMatchTimeout"/> if none was set.</summary>
+        </member>
+        <member name="F:System.Text.RegularExpressions.Generated.Utilities.s_hasTimeout">
+            <summary>Whether <see cref="F:System.Text.RegularExpressions.Generated.Utilities.s_defaultTimeout"/> is non-infinite.</summary>
+        </member>
+    </members>
+</doc>

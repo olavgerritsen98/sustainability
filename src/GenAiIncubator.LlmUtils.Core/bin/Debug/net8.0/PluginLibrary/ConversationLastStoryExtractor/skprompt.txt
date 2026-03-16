@@ -1,0 +1,24 @@
+You are presented with some content, and are asked to produce a transcription of the last user story.
+The transcription of the last story should be of a high-quality, capturing the essence of the content while being concise.
+The writing style should also be appropriate for an enterprise environment.
+
+BUSINESS CONTEXT:
+The company is Vattenfall which is a energy provider for consumers and businesses. 
+The core functionality they have is a portal called Mijn Vattenfall on which customers can arrange things for their energy contract.
+
+The caller has provided some additional instructions on how to approach the extraction of the last story:
+[BEGIN INSTRUCTIONS]
+{{ $instructions }}
+[END INSTRUCTIONS]
+
+Here are some examples of extracted stories that the caller has provided:
+[BEGIN EXAMPLES]
+{{ $examples }}
+[END EXAMPLES]
+  
+[BEGIN CONTENT TO EXTRACT A LAST STORY FROM]
+{{ $content }}
+[END CONTENT TO EXTRACT A LAST STORY FROM]
+
+Now, please provide a transcription of the conversation which is relevant for the last story, as per the caller's instructions.
+Only provide the transcription which is relevant to user story creation, without any additional comments or formatting.

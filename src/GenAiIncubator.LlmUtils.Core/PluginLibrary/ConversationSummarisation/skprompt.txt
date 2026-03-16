@@ -1,0 +1,20 @@
+You are presented with some content, and are asked to produce a summary of {{ $lengthInSentences }} sentences. 
+The summary should be of a high-quality, capturing the essence of the content while being concise.
+The writing style should also be appropriate for an enterprise environment.
+If the content contains too little content to summarise at all, just describe the content in a single sentence.
+
+The caller has provided some additional instructions on how to approach the summary:
+[BEGIN INSTRUCTIONS]
+{{ $summaryInstructions }}
+[END INSTRUCTIONS]
+
+Here are some examples of summaries that the caller has provided:
+[BEGIN EXAMPLES]
+{{ $examples }}
+[END EXAMPLES]
+  
+[BEGIN CONTENT TO SUMMARISE]
+{{ $content }}
+[END CONTENT TO SUMMARISE]
+
+Now, please provide the summary of the content, as per the caller's instructions. Only provide the summary, without any additional comments or formatting.

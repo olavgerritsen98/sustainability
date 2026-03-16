@@ -1,0 +1,18 @@
+{
+  "cases": [
+    {
+      "fileName": "with_clause.pdf",
+      "expectedHasEthicalClause": true
+    },
+    {
+      "fileName": "with_clause_2.pdf",
+      "expectedHasEthicalClause": true
+    },
+    {
+      "fileName": "without_clause.pdf",
+      "expectedHasEthicalClause": false
+    }
+  ]
+}
+
+

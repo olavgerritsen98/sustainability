@@ -1,0 +1,39 @@
+{
+    "schema": 1,
+    "description": "Produces a high-quality summary of the input content, adhering to provided instructions and examples if provided.",
+    "execution_settings": {
+        "default": {
+            "max_tokens": 5000,
+            "temperature": 0.3,
+            "top_p": 0.0,
+            "presence_penalty": 0.0,
+            "frequency_penalty": 0.0
+        }
+    },
+    "input_variables": [
+        {
+            "name": "content",
+            "description": "The content to summarize",
+            "default": "",
+            "is_required": true
+        },
+        {
+            "name": "lengthInSentences",
+            "description": "The desired number of sentences for the summary",
+            "default": "5",
+            "is_required": false
+        },
+        {
+            "name": "summaryInstructions",
+            "description": "Additional instructions on how to approach the summary",
+            "default": "Provide a high-level summary of the input content, focusing on the key points and main ideas. Focus on roles (ex: a client) rather than specific people (Mr Smith).",
+            "is_required": false
+        },
+        {
+            "name": "examples",
+            "description": "Examples of summaries to guide the output style and tone",
+            "default": "",
+            "is_required": false
+        }
+    ]
+}

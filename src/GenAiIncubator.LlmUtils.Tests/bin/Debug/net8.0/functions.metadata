@@ -1,0 +1,570 @@
+[
+  {
+    "name": "SendComplianceEmail_Start",
+    "scriptFile": "GenAiIncubator.LlmUtils_Functions.dll",
+    "entryPoint": "GenAiIncubator.LlmUtils_Functions.Definitions.SendComplianceEmailFunction.RunAsync",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "req",
+        "direction": "In",
+        "type": "httpTrigger",
+        "authLevel": "Function",
+        "methods": [
+          "post"
+        ],
+        "route": "compliance-email/send",
+        "properties": {}
+      },
+      {
+        "name": "$return",
+        "type": "http",
+        "direction": "Out"
+      }
+    ]
+  },
+  {
+    "name": "UnwantedDataClassification",
+    "scriptFile": "GenAiIncubator.LlmUtils_Functions.dll",
+    "entryPoint": "GenAiIncubator.LlmUtils_Functions.Definitions.UnwantedDataClassification.UnwantedDataClassificationFunction.RunAsync",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "req",
+        "direction": "In",
+        "type": "httpTrigger",
+        "authLevel": "Function",
+        "methods": [
+          "post"
+        ],
+        "properties": {}
+      },
+      {
+        "name": "$return",
+        "type": "http",
+        "direction": "Out"
+      }
+    ]
+  },
+  {
+    "name": "SustainabilityClaimsEmailNotification_BlobTrigger",
+    "scriptFile": "GenAiIncubator.LlmUtils_Functions.dll",
+    "entryPoint": "GenAiIncubator.LlmUtils_Functions.Definitions.SustainabilityClaimsEmailNotification.SustainabilityClaimsEmailNotificationBlobTriggerFunction.RunAsync",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "blobClient",
+        "direction": "In",
+        "type": "blobTrigger",
+        "path": "sustainability-email-input/{name}",
+        "connection": "AzureWebJobsStorage",
+        "properties": {
+          "supportsDeferredBinding": "True"
+        }
+      }
+    ]
+  },
+  {
+    "name": "SustainabilityClaimsCheckFromText",
+    "scriptFile": "GenAiIncubator.LlmUtils_Functions.dll",
+    "entryPoint": "GenAiIncubator.LlmUtils_Functions.Definitions.SustainabilityClaimsChecker.SustainabilityClaimsCheckFromTextFunction.RunAsync",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "req",
+        "direction": "In",
+        "type": "httpTrigger",
+        "authLevel": "Function",
+        "methods": [
+          "post"
+        ],
+        "properties": {}
+      },
+      {
+        "name": "$return",
+        "type": "http",
+        "direction": "Out"
+      }
+    ]
+  },
+  {
+    "name": "SustainabilityClaimsCheck",
+    "scriptFile": "GenAiIncubator.LlmUtils_Functions.dll",
+    "entryPoint": "GenAiIncubator.LlmUtils_Functions.Definitions.SustainabilityClaimsChecker.SustainabilityClaimsCheckFunction.RunAsync",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "req",
+        "direction": "In",
+        "type": "httpTrigger",
+        "authLevel": "Function",
+        "methods": [
+          "post"
+        ],
+        "properties": {}
+      },
+      {
+        "name": "$return",
+        "type": "http",
+        "direction": "Out"
+      }
+    ]
+  },
+  {
+    "name": "SustainabilityClaimsCheckAsync_Activity",
+    "scriptFile": "GenAiIncubator.LlmUtils_Functions.dll",
+    "entryPoint": "GenAiIncubator.LlmUtils_Functions.Definitions.SustainabilityClaimsCheckerAsync.SustainabilityClaimsCheckAsyncActivity.RunAsync",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "request",
+        "direction": "In",
+        "type": "activityTrigger",
+        "properties": {}
+      }
+    ]
+  },
+  {
+    "name": "SustainabilityClaimsCheckAsync_Orchestrator",
+    "scriptFile": "GenAiIncubator.LlmUtils_Functions.dll",
+    "entryPoint": "GenAiIncubator.LlmUtils_Functions.Definitions.SustainabilityClaimsCheckerAsync.SustainabilityClaimsCheckAsyncOrchestrator.RunAsync",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "context",
+        "direction": "In",
+        "type": "orchestrationTrigger",
+        "properties": {}
+      }
+    ]
+  },
+  {
+    "name": "SustainabilityClaimsCheckAsync_Start",
+    "scriptFile": "GenAiIncubator.LlmUtils_Functions.dll",
+    "entryPoint": "GenAiIncubator.LlmUtils_Functions.Definitions.SustainabilityClaimsCheckerAsync.SustainabilityClaimsCheckAsyncStartFunction.RunAsync",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "req",
+        "direction": "In",
+        "type": "httpTrigger",
+        "authLevel": "Function",
+        "methods": [
+          "post"
+        ],
+        "route": "sustainability-claims-check/async/start",
+        "properties": {}
+      },
+      {
+        "name": "client",
+        "direction": "In",
+        "type": "durableClient",
+        "properties": {}
+      },
+      {
+        "name": "$return",
+        "type": "http",
+        "direction": "Out"
+      }
+    ]
+  },
+  {
+    "name": "SustainabilityClaimsCheckAsync_Status",
+    "scriptFile": "GenAiIncubator.LlmUtils_Functions.dll",
+    "entryPoint": "GenAiIncubator.LlmUtils_Functions.Definitions.SustainabilityClaimsCheckerAsync.SustainabilityClaimsCheckAsyncStatusFunction.RunAsync",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "req",
+        "direction": "In",
+        "type": "httpTrigger",
+        "authLevel": "Function",
+        "methods": [
+          "get"
+        ],
+        "route": "sustainability-claims-check/async/{jobId}",
+        "properties": {}
+      },
+      {
+        "name": "client",
+        "direction": "In",
+        "type": "durableClient",
+        "properties": {}
+      },
+      {
+        "name": "$return",
+        "type": "http",
+        "direction": "Out"
+      }
+    ]
+  },
+  {
+    "name": "SustainabilityClaimsBatchCheck_BlobTrigger",
+    "scriptFile": "GenAiIncubator.LlmUtils_Functions.dll",
+    "entryPoint": "GenAiIncubator.LlmUtils_Functions.Definitions.SustainabilityClaimsBatchChecks.SustainabilityClaimsBatchCheckBlobTriggerFunction.RunAsync",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "blobClient",
+        "direction": "In",
+        "type": "blobTrigger",
+        "path": "batch-input/{name}",
+        "connection": "AzureWebJobsStorage",
+        "properties": {
+          "supportsDeferredBinding": "True"
+        }
+      },
+      {
+        "name": "client",
+        "direction": "In",
+        "type": "durableClient",
+        "properties": {}
+      }
+    ]
+  },
+  {
+    "name": "SustainabilityClaimsBatchCheck_Orchestrator",
+    "scriptFile": "GenAiIncubator.LlmUtils_Functions.dll",
+    "entryPoint": "GenAiIncubator.LlmUtils_Functions.Definitions.SustainabilityClaimsBatchChecks.SustainabilityClaimsBatchCheckOrchestrator.RunAsync",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "context",
+        "direction": "In",
+        "type": "orchestrationTrigger",
+        "properties": {}
+      }
+    ]
+  },
+  {
+    "name": "SustainabilityClaimsBatchCheck_ParseCsv",
+    "scriptFile": "GenAiIncubator.LlmUtils_Functions.dll",
+    "entryPoint": "GenAiIncubator.LlmUtils_Functions.Definitions.SustainabilityClaimsBatchChecks.SustainabilityClaimsBatchCheckParseCsvActivity.RunAsync",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "input",
+        "direction": "In",
+        "type": "activityTrigger",
+        "properties": {}
+      }
+    ]
+  },
+  {
+    "name": "SustainabilityClaimsBatchCheck_WriteReport",
+    "scriptFile": "GenAiIncubator.LlmUtils_Functions.dll",
+    "entryPoint": "GenAiIncubator.LlmUtils_Functions.Definitions.SustainabilityClaimsBatchChecks.SustainabilityClaimsBatchCheckWriteReportActivity.RunAsync",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "result",
+        "direction": "In",
+        "type": "activityTrigger",
+        "properties": {}
+      }
+    ]
+  },
+  {
+    "name": "SummariseConversation",
+    "scriptFile": "GenAiIncubator.LlmUtils_Functions.dll",
+    "entryPoint": "GenAiIncubator.LlmUtils_Functions.Definitions.SummariseConversation.SummariseConversationFunction.RunAsync",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "req",
+        "direction": "In",
+        "type": "httpTrigger",
+        "authLevel": "Function",
+        "methods": [
+          "post"
+        ],
+        "properties": {}
+      },
+      {
+        "name": "$return",
+        "type": "http",
+        "direction": "Out"
+      }
+    ]
+  },
+  {
+    "name": "ExtractHeaterType",
+    "scriptFile": "GenAiIncubator.LlmUtils_Functions.dll",
+    "entryPoint": "GenAiIncubator.LlmUtils_Functions.Definitions.ExtractHeaterType.ExtractHeaterTypeFunction.RunAsync",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "req",
+        "direction": "In",
+        "type": "httpTrigger",
+        "authLevel": "Function",
+        "methods": [
+          "post"
+        ],
+        "properties": {}
+      },
+      {
+        "name": "$return",
+        "type": "http",
+        "direction": "Out"
+      }
+    ]
+  },
+  {
+    "name": "EthicalClauseContractValidation",
+    "scriptFile": "GenAiIncubator.LlmUtils_Functions.dll",
+    "entryPoint": "GenAiIncubator.LlmUtils_Functions.Definitions.EthicalClauseContractValidation.EthicalClauseContractValidationFunction.RunAsync",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "req",
+        "direction": "In",
+        "type": "httpTrigger",
+        "authLevel": "Function",
+        "methods": [
+          "post"
+        ],
+        "properties": {}
+      },
+      {
+        "name": "$return",
+        "type": "http",
+        "direction": "Out"
+      }
+    ]
+  },
+  {
+    "name": "CreateUserStory",
+    "scriptFile": "GenAiIncubator.LlmUtils_Functions.dll",
+    "entryPoint": "GenAiIncubator.LlmUtils_Functions.Definitions.CreateUserStory.CreateUserStoryFunction.RunAsync",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "req",
+        "direction": "In",
+        "type": "httpTrigger",
+        "authLevel": "Function",
+        "methods": [
+          "post"
+        ],
+        "properties": {}
+      },
+      {
+        "name": "$return",
+        "type": "http",
+        "direction": "Out"
+      }
+    ]
+  },
+  {
+    "name": "ClassifyCustomerJourney",
+    "scriptFile": "GenAiIncubator.LlmUtils_Functions.dll",
+    "entryPoint": "GenAiIncubator.LlmUtils_Functions.Definitions.ClassifyCustomerJourney.ClassifyCustomerJourneyFunction.RunAsync",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "req",
+        "direction": "In",
+        "type": "httpTrigger",
+        "authLevel": "Function",
+        "methods": [
+          "post"
+        ],
+        "properties": {}
+      },
+      {
+        "name": "$return",
+        "type": "http",
+        "direction": "Out"
+      }
+    ]
+  },
+  {
+    "name": "AnonymiseContent",
+    "scriptFile": "GenAiIncubator.LlmUtils_Functions.dll",
+    "entryPoint": "GenAiIncubator.LlmUtils_Functions.Definitions.AnonymiseContent.AnonymiseContentFunction.RunAsync",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "req",
+        "direction": "In",
+        "type": "httpTrigger",
+        "authLevel": "Function",
+        "methods": [
+          "post"
+        ],
+        "properties": {}
+      },
+      {
+        "name": "$return",
+        "type": "http",
+        "direction": "Out"
+      }
+    ]
+  },
+  {
+    "name": "RenderSwaggerDocument",
+    "scriptFile": "Microsoft.Azure.Functions.Worker.Extensions.OpenApi.dll",
+    "entryPoint": "Microsoft.Azure.Functions.Worker.Extensions.OpenApi.DefaultOpenApiHttpTrigger.RenderSwaggerDocument",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "req",
+        "direction": "In",
+        "type": "httpTrigger",
+        "authLevel": "Anonymous",
+        "methods": [
+          "GET"
+        ],
+        "route": "swagger.{extension}",
+        "properties": {}
+      },
+      {
+        "name": "$return",
+        "type": "http",
+        "direction": "Out"
+      }
+    ]
+  },
+  {
+    "name": "RenderOpenApiDocument",
+    "scriptFile": "Microsoft.Azure.Functions.Worker.Extensions.OpenApi.dll",
+    "entryPoint": "Microsoft.Azure.Functions.Worker.Extensions.OpenApi.DefaultOpenApiHttpTrigger.RenderOpenApiDocument",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "req",
+        "direction": "In",
+        "type": "httpTrigger",
+        "authLevel": "Anonymous",
+        "methods": [
+          "GET"
+        ],
+        "route": "openapi/{version}.{extension}",
+        "properties": {}
+      },
+      {
+        "name": "$return",
+        "type": "http",
+        "direction": "Out"
+      }
+    ]
+  },
+  {
+    "name": "RenderSwaggerUI",
+    "scriptFile": "Microsoft.Azure.Functions.Worker.Extensions.OpenApi.dll",
+    "entryPoint": "Microsoft.Azure.Functions.Worker.Extensions.OpenApi.DefaultOpenApiHttpTrigger.RenderSwaggerUI",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "req",
+        "direction": "In",
+        "type": "httpTrigger",
+        "authLevel": "Anonymous",
+        "methods": [
+          "GET"
+        ],
+        "route": "swagger/ui",
+        "properties": {}
+      },
+      {
+        "name": "$return",
+        "type": "http",
+        "direction": "Out"
+      }
+    ]
+  },
+  {
+    "name": "RenderOAuth2Redirect",
+    "scriptFile": "Microsoft.Azure.Functions.Worker.Extensions.OpenApi.dll",
+    "entryPoint": "Microsoft.Azure.Functions.Worker.Extensions.OpenApi.DefaultOpenApiHttpTrigger.RenderOAuth2Redirect",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "req",
+        "direction": "In",
+        "type": "httpTrigger",
+        "authLevel": "Anonymous",
+        "methods": [
+          "GET"
+        ],
+        "route": "oauth2-redirect.html",
+        "properties": {}
+      },
+      {
+        "name": "$return",
+        "type": "http",
+        "direction": "Out"
+      }
+    ]
+  }
+]

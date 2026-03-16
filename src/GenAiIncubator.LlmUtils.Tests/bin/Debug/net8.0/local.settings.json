@@ -1,0 +1,13 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "FUNCTIONS_WORKER_RUNTIME": "dotnet-isolated",
+    "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+    "BATCH_LOG_EACH_URL": "true",
+    "TenantId": "f8be18a6-f648-4a47-be73-86d6c5c6604d",
+    "ClientId": "b66f5cbc-0a7f-4849-837b-abee85c84194",
+    "GraphOptions__TenantId": "f8be18a6-f648-4a47-be73-86d6c5c6604d",
+    "GraphOptions__ClientId": "b66f5cbc-0a7f-4849-837b-abee85c84194",
+    "GraphOptions__ClientSecret": "5Iw8Q~kYqBZtCEELgXP49ol1t0JEvWO0E~5IzcFi"
+  }
+}
