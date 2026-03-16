@@ -98,7 +98,7 @@ public static class ServiceCollectionExtensions
                 endpoint: options.Endpoint,
                 apiKey: options.AzureOpenAIApiKey,
                 httpClient: customHttpClient,
-                                apiVersion: "v1"
+                                apiVersion: "2025-04-01-preview"
             );
 
             return builder.Build();
