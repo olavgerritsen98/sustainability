@@ -1,6 +1,0 @@
-Extract the heater type from the given image. Acceptable heater types: 
-{{ $heaterTypes }}
-
-Image to classify: 
-
-{{ $image }}
