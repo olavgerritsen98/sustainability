@@ -1,0 +1,80 @@
+trigger:
+- main
+
+pr: 
+  branches:
+    include:
+      - main
+
+parameters:
+  - name: environments
+    type: object
+    default:
+      - name: 'tst'
+        displayName: 'Deploy to TST'
+        azureSubscription: 'Connection TO CEP DEV/TST'
+        appName: 'genai-incubator-llm-utils-functions-tst'
+        resourceGroupName: 'cep-tst-genai-incubator-we-rg'
+        environment: 'Llm Utils Functions TST'
+        keyVaultName: 'genai-inc-kv-tst' 
+        appServicePlan: 'ASP-ceptstgenaiincubatorwerg'
+      - name: 'prd'
+        displayName: 'Deploy to PRD'
+        azureSubscription: 'Connection TO CEP ACC/PRD'
+        appName: 'genai-incubator-llm-utils-functions-prd' 
+        resourceGroupName: 'cep-prd-genai-incubator-we-rg'
+        environment: 'Llm Utils Functions PRD'
+        keyVaultName: 'genai-incubator-kv-prd'
+        appServicePlan: 'ASP-cepprdgenaiincubatorwerg-llmutils-functions' 
+
+variables:
+  vmImageName: 'ubuntu-latest'
+  whatifDeployment: false
+  infraFolderPath: 'LlmUtils/infra/bicep'
+  solutionPath: 'LlmUtils/GenAiIncubator.LlmUtils.sln'
+  projectPath: 'LlmUtils/src/GenAiIncubator.LlmUtils.Functions/GenAiIncubator.LlmUtils_Functions.csproj'
+  bicepFileName: 'main.bicep'
+
+stages:
+  - ${{ each env in parameters.environments }}:
+    - stage: Deploy_${{ env.name }}
+      displayName: ${{ env.displayName }}
+      ${{ if eq(env.name, 'PRD')}}:
+        dependsOn: 'Deploy_TST'
+        condition: 'succeeded()'
+      jobs:
+        - deployment: Deploy_${{ env.name }}
+          environment: ${{ env.environment }}
+          strategy:
+            runOnce:
+              deploy:
+                steps:
+                - checkout: self
+                  displayName: 'Checkout Code'
+
+                - task: UseDotNet@2
+                  displayName: 'Set up .NET'
+                  inputs:
+                    packageType: 'sdk'
+                    version: '8.x'
+
+                - template: infra/pipeline/provision-azure-resources.yml
+                  parameters:
+                    subscription: ${{ env.azureSubscription }}
+                    environmentDtap: ${{ env.name }}
+                    projectName: ${{ env.appName }}
+                    bicepFileName: $(bicepFileName)
+                    resourceGroup: ${{ env.resourceGroupName }}
+                    appServicePlan: ${{ env.appServicePlan }}
+                    keyVaultName: ${{ env.keyVaultName }}
+                    whatifDeployment: $(whatifDeployment)
+                    infraFolderRelativePath: $(infraFolderPath)
+                    functionAppName: ${{ env.appName }}
+
+                - template: infra/pipeline/deploy-function-app.yml
+                  parameters:
+                    azureSubscription: ${{ env.azureSubscription }}
+                    appName: ${{ env.appName }}
+                    solutionPath: $(solutionPath)
+                    projectPath: $(projectPath)
+                    

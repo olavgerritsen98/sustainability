@@ -1,0 +1,58 @@
+File	Expected	Recognized Main	Recognized Alternatives	IsMainCorrect	IsAltCorrect
+/Users/alexandros/Repos/LlmUtils/src/GenAiIncubator.LlmUtils.Tests/static/heaters/test_set/City heat 5.jpg	CityHeat	CityHeat		True	True
+/Users/alexandros/Repos/LlmUtils/src/GenAiIncubator.LlmUtils.Tests/static/heaters/test_set/hybrid_heat_pump_7.jpeg	HybridHeatPump	HybridHeatPump		True	True
+/Users/alexandros/Repos/LlmUtils/src/GenAiIncubator.LlmUtils.Tests/static/heaters/test_set/Airco binnenunit 4.webp	AirConditioning	AirConditioning	FullElectricHeatPump	True	True
+/Users/alexandros/Repos/LlmUtils/src/GenAiIncubator.LlmUtils.Tests/static/heaters/test_set/City heat 4.jpg	CityHeat	FullElectricHeatPump	HybridHeatPump	False	False
+/Users/alexandros/Repos/LlmUtils/src/GenAiIncubator.LlmUtils.Tests/static/heaters/test_set/City heat 6.jpg	CityHeat	CityHeat	SharedHeating	True	True
+/Users/alexandros/Repos/LlmUtils/src/GenAiIncubator.LlmUtils.Tests/static/heaters/test_set/cv_ketel_2.jpeg	CVKetel	CVKetel		True	True
+/Users/alexandros/Repos/LlmUtils/src/GenAiIncubator.LlmUtils.Tests/static/heaters/test_set/cvketel-5.jpg	CVKetel	CVKetel		True	True
+/Users/alexandros/Repos/LlmUtils/src/GenAiIncubator.LlmUtils.Tests/static/heaters/test_set/City heat 3.jpg	CityHeat	CityHeat		True	True
+/Users/alexandros/Repos/LlmUtils/src/GenAiIncubator.LlmUtils.Tests/static/heaters/test_set/cvketel-1.jpg	CVKetel	CVKetel		True	True
+/Users/alexandros/Repos/LlmUtils/src/GenAiIncubator.LlmUtils.Tests/static/heaters/test_set/City heat 2.jpg	CityHeat	CityHeat		True	True
+/Users/alexandros/Repos/LlmUtils/src/GenAiIncubator.LlmUtils.Tests/static/heaters/test_set/airconditioning-2.jpeg	AirConditioning	AirConditioning	FullElectricHeatPump	True	True
+/Users/alexandros/Repos/LlmUtils/src/GenAiIncubator.LlmUtils.Tests/static/heaters/test_set/cvketel-2.jpg	CVKetel	CVKetel		True	True
+/Users/alexandros/Repos/LlmUtils/src/GenAiIncubator.LlmUtils.Tests/static/heaters/test_set/Airco buitenunit.jpg	AirConditioning	FullElectricHeatPump	AirConditioning	False	True
+/Users/alexandros/Repos/LlmUtils/src/GenAiIncubator.LlmUtils.Tests/static/heaters/test_set/cvketel-3.jpg	CVKetel	CVKetel		True	True
+/Users/alexandros/Repos/LlmUtils/src/GenAiIncubator.LlmUtils.Tests/static/heaters/test_set/Stadswarmte 2.jpeg	CityHeat	CityHeat	SharedHeating	True	True
+/Users/alexandros/Repos/LlmUtils/src/GenAiIncubator.LlmUtils.Tests/static/heaters/test_set/Airco buitenunit 4.webp	AirConditioning	FullElectricHeatPump	AirConditioning	False	True
+/Users/alexandros/Repos/LlmUtils/src/GenAiIncubator.LlmUtils.Tests/static/heaters/test_set/hybrid_heat_pump_3.png	HybridHeatPump	HybridHeatPump		True	True
+/Users/alexandros/Repos/LlmUtils/src/GenAiIncubator.LlmUtils.Tests/static/heaters/test_set/City heat.jpg	CityHeat	CityHeat		True	True
+/Users/alexandros/Repos/LlmUtils/src/GenAiIncubator.LlmUtils.Tests/static/heaters/test_set/hybrid_heat_pump_2.jpg	HybridHeatPump	HybridHeatPump		True	True
+/Users/alexandros/Repos/LlmUtils/src/GenAiIncubator.LlmUtils.Tests/static/heaters/test_set/hybrid_heat_pump.jpg	HybridHeatPump	CVKetel		False	False
+/Users/alexandros/Repos/LlmUtils/src/GenAiIncubator.LlmUtils.Tests/static/heaters/test_set/hybrid_heat_pump_5.jpg	HybridHeatPump	HybridHeatPump	CVKetel/FullElectricHeatPump	True	True
+/Users/alexandros/Repos/LlmUtils/src/GenAiIncubator.LlmUtils.Tests/static/heaters/test_set/solar_inverter_to_be_used_for_NULL.jpeg	Unknown	Unknown	Unknown	True	True
+/Users/alexandros/Repos/LlmUtils/src/GenAiIncubator.LlmUtils.Tests/static/heaters/test_set/hybrid_heat_pump_4.jpg	HybridHeatPump	HybridHeatPump	CVKetel/FullElectricHeatPump	True	True
+/Users/alexandros/Repos/LlmUtils/src/GenAiIncubator.LlmUtils.Tests/static/heaters/test_set/hybrid_heat_pump_6.png	HybridHeatPump	HybridHeatPump	CVKetel/FullElectricHeatPump	True	True
+/Users/alexandros/Repos/LlmUtils/src/GenAiIncubator.LlmUtils.Tests/static/heaters/test_set/Airco binnenunit 2.jpg	AirConditioning	AirConditioning	FullElectricHeatPump	True	True
+/Users/alexandros/Repos/LlmUtils/src/GenAiIncubator.LlmUtils.Tests/static/heaters/test_set/cvketel-4.jpeg	CVKetel	CVKetel		True	True
+/Users/alexandros/Repos/LlmUtils/src/GenAiIncubator.LlmUtils.Tests/static/heaters/test_set/hybrid_heat_pump_8.jpg	HybridHeatPump	CVKetel		False	False
+/Users/alexandros/Repos/LlmUtils/src/GenAiIncubator.LlmUtils.Tests/static/heaters/test_set/Airco binnenunit 3.jpg	AirConditioning	AirConditioning	FullElectricHeatPump	True	True
+/Users/alexandros/Repos/LlmUtils/src/GenAiIncubator.LlmUtils.Tests/static/heaters/test_set/cv_ketel.jpg	CVKetel	CVKetel		True	True
+/Users/alexandros/Repos/LlmUtils/src/GenAiIncubator.LlmUtils.Tests/static/heaters/test_set/eigen_warmtebron_4.jpg	OwnHeatSource	OwnHeatSource	OtherHeatingSetup	True	True
+/Users/alexandros/Repos/LlmUtils/src/GenAiIncubator.LlmUtils.Tests/static/heaters/test_set/luchtverwarming_7.jpg	AirHeating	AirHeating	CVKetel	True	True
+/Users/alexandros/Repos/LlmUtils/src/GenAiIncubator.LlmUtils.Tests/static/heaters/test_set/Airco binnenunit.webp	AirConditioning	AirConditioning	FullElectricHeatPump	True	True
+/Users/alexandros/Repos/LlmUtils/src/GenAiIncubator.LlmUtils.Tests/static/heaters/test_set/airconditioning-1.jpeg	AirConditioning	AirConditioning	FullElectricHeatPump	True	True
+/Users/alexandros/Repos/LlmUtils/src/GenAiIncubator.LlmUtils.Tests/static/heaters/test_set/cv_ketel_3.jpg	CVKetel	CVKetel		True	True
+/Users/alexandros/Repos/LlmUtils/src/GenAiIncubator.LlmUtils.Tests/static/heaters/test_set/full_electric_heat_pump_4.jpg	FullElectricHeatPump	FullElectricHeatPump		True	True
+/Users/alexandros/Repos/LlmUtils/src/GenAiIncubator.LlmUtils.Tests/static/heaters/test_set/luchtverwarming_6.jpg	AirHeating	CVKetel		False	False
+/Users/alexandros/Repos/LlmUtils/src/GenAiIncubator.LlmUtils.Tests/static/heaters/test_set/Stadswarmte 1.jpeg	CityHeat	Unknown	CVKetel/CityHeat/SharedHeating	False	True
+/Users/alexandros/Repos/LlmUtils/src/GenAiIncubator.LlmUtils.Tests/static/heaters/test_set/eigen_warmtebron_5.jpg	OwnHeatSource	OwnHeatSource	OtherHeatingSetup	True	True
+/Users/alexandros/Repos/LlmUtils/src/GenAiIncubator.LlmUtils.Tests/static/heaters/test_set/luchtverwarming_4.jpg	AirHeating	FullElectricHeatPump	AirHeating	False	True
+/Users/alexandros/Repos/LlmUtils/src/GenAiIncubator.LlmUtils.Tests/static/heaters/test_set/full_electric_heat_pump.png	FullElectricHeatPump	FullElectricHeatPump	HybridHeatPump	True	True
+/Users/alexandros/Repos/LlmUtils/src/GenAiIncubator.LlmUtils.Tests/static/heaters/test_set/luchtverwarming_5.jpg	AirHeating	AirHeating	CVKetel	True	True
+/Users/alexandros/Repos/LlmUtils/src/GenAiIncubator.LlmUtils.Tests/static/heaters/test_set/eigen_warmtebron_2.jpg	OwnHeatSource	OwnHeatSource	OtherHeatingSetup	True	True
+/Users/alexandros/Repos/LlmUtils/src/GenAiIncubator.LlmUtils.Tests/static/heaters/test_set/luchtverwarming_1.jpg	AirHeating	AirHeating	OwnHeatSource/OtherHeatingSetup	True	True
+/Users/alexandros/Repos/LlmUtils/src/GenAiIncubator.LlmUtils.Tests/static/heaters/test_set/full_electric_heat_pump_3.jpg	FullElectricHeatPump	FullElectricHeatPump	HybridHeatPump	True	True
+/Users/alexandros/Repos/LlmUtils/src/GenAiIncubator.LlmUtils.Tests/static/heaters/test_set/cv_ketel_5.jpg	CVKetel	CVKetel		True	True
+/Users/alexandros/Repos/LlmUtils/src/GenAiIncubator.LlmUtils.Tests/static/heaters/test_set/cv_ketel_4.jpg	CVKetel	CVKetel		True	True
+/Users/alexandros/Repos/LlmUtils/src/GenAiIncubator.LlmUtils.Tests/static/heaters/test_set/full_electric_heat_pump_2.png	FullElectricHeatPump	FullElectricHeatPump	HybridHeatPump	True	True
+/Users/alexandros/Repos/LlmUtils/src/GenAiIncubator.LlmUtils.Tests/static/heaters/test_set/full_electric_heat_pump_2.jpg	FullElectricHeatPump	FullElectricHeatPump		True	True
+/Users/alexandros/Repos/LlmUtils/src/GenAiIncubator.LlmUtils.Tests/static/heaters/test_set/eigen_warmtebron_3.jpg	OwnHeatSource	OwnHeatSource	OtherHeatingSetup	True	True
+/Users/alexandros/Repos/LlmUtils/src/GenAiIncubator.LlmUtils.Tests/static/heaters/test_set/Airco buitenunit 3.jpg	AirConditioning	FullElectricHeatPump	AirConditioning	False	True
+/Users/alexandros/Repos/LlmUtils/src/GenAiIncubator.LlmUtils.Tests/static/heaters/test_set/eigen_warmtebron_1.jpg	OwnHeatSource	OwnHeatSource	OtherHeatingSetup	True	True
+/Users/alexandros/Repos/LlmUtils/src/GenAiIncubator.LlmUtils.Tests/static/heaters/test_set/luchtverwarming_2.jpg	AirHeating	HybridHeatPump	CVKetel/FullElectricHeatPump	False	False
+/Users/alexandros/Repos/LlmUtils/src/GenAiIncubator.LlmUtils.Tests/static/heaters/test_set/cv_ketel_6.jpg	CVKetel	CVKetel		True	True
+/Users/alexandros/Repos/LlmUtils/src/GenAiIncubator.LlmUtils.Tests/static/heaters/test_set/stadswarmte.jpg	CityHeat	CityHeat		True	True
+/Users/alexandros/Repos/LlmUtils/src/GenAiIncubator.LlmUtils.Tests/static/heaters/test_set/full_electric_heat_pump_1.jpg	FullElectricHeatPump	FullElectricHeatPump		True	True
+/Users/alexandros/Repos/LlmUtils/src/GenAiIncubator.LlmUtils.Tests/static/heaters/test_set/luchtverwarming_3.jpg	AirHeating	AirHeating	CVKetel	True	True
+/Users/alexandros/Repos/LlmUtils/src/GenAiIncubator.LlmUtils.Tests/static/heaters/test_set/Airco buitenunit 2.jpg	AirConditioning	FullElectricHeatPump	AirConditioning/HybridHeatPump	False	True

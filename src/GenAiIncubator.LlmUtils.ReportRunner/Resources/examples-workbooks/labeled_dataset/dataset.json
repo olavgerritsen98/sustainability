@@ -1,0 +1,17 @@
+{
+  "GroundTruth": {
+    "WorkbookPath": "${CONTENT_ROOT}/Resources/examples-workbooks/labeled_dataset/labeled_dataset.xlsx",
+    "UrlToTabName": {
+      "https://www.vattenfall.nl//stadsverwarming/warmtenetten-en-warmtebronnen/amsterdam/": "1",
+      "https://www.vattenfall.nl//gas-water-licht/verbruik/": "2",
+      "https://www.vattenfall.nl//duurzamer-wonen/energielabel-led-lampen/": "3",
+      "https://www.vattenfall.nl//stroom/stroometiket/": "4",
+      "https://www.vattenfall.nl//helder/": "5",
+      "https://www.vattenfall.nl//grootzakelijk/sectoren/vastgoed/vve-beheerders/": "6",
+      "https://www.vattenfall.nl//zzp/": "7",
+      "https://www.vattenfall.nl//mkb/zakelijke-energie/flexprijs-email/": "8",
+      "https://www.vattenfall.nl//stroom-gas/wat-is-duurder-gas-of-stroom/": "9",
+      "https://www.vattenfall.nl//grootzakelijk/groen-gas/": "10"
+    }
+  }
+}

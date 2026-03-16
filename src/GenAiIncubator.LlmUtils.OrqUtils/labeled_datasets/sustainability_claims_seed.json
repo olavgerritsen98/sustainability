@@ -1,0 +1,173 @@
+[
+  {
+    "id": "NC-001",
+    "text": "Slim verduurzamen Wij helpen u om uw vastgoed stap voor stap te verduur­zamen. Met data-inzicht (via Mijn Vattenfall Zakelijk of een Energie Management Systeem), advies op maat over subsidie- en wetgevingskansen én bewezen technologieën zoals warmte­pompen, batterijen en zonne­panelen. Zo zet u stappen richting Paris Proof, bespaart u kosten en verhoogt u de waarde van uw vastgoed.  Plan een vrijblijvend gesprek",
+    "isClaim": false,
+    "claimType": "",
+    "topics": [],
+    "expectedViolations": [],
+    "reasoning": ""
+  },
+  {
+    "id": "AMB-001",
+    "text": "Ons plan. We zetten ons in voor een toekomst waarin we voor onze energie minder afhankelijk zijn van het gebruik van fossiele brandstoffen. Bekijk wat onze klimaatambitie is om onze afhankelijkheid van deze brandstoffen zoveel mogelijk af te bouwen (https://www.vattenfall.nl/media/4.-over-vattenfall-corporate/2.-wat-we-doen/1.-ons-plan/onze-klimaatambitie-rapport-co2-reductie-2017-2040-mei-2025.pdf).  → Lees meer over ons plan (https://www.vattenfall.nl/over-vattenfall/onsplan/)",
+    "isClaim": true,
+    "claimType": "Ambition",
+    "topics": [],
+    "expectedViolations": [],
+    "reasoning": "Compliant"
+  },
+  {
+    "id": "AMB-002",
+    "text": "Steeds meer elektriciteit opwekken met wind → Elektriciteit opwekken met wind (https://www.vattenfall.nl/over-vattenfall/onze-energiebronnen/windenergie/)",
+    "isClaim": true,
+    "claimType": "Ambition",
+    "topics": [],
+    "expectedViolations": ["Ambition", "Sustanciation"],
+    "reasoning": "Not compliant: not specific enough & missing substantiation."
+  },
+  {
+    "id": "ELEC-001",
+    "text": "100% groene stroom uit Nederland. Voor onze contracten vast, variabel en dynamisch geldt dat we ze leveren met ons product Groen uit Nederland. Dat is 100% groene stroom (https://www.vattenfall.nl/groene-stroom/) opgewerkt uit duurzame energiebronnen, zoals wind en zon. Bekijk ons stroometiket (https://www.vattenfall.nl/stroom/stroometiket/).",
+    "isClaim": true,
+    "claimType": "Regular",
+    "topics": ["GreenElectricity"],
+    "expectedViolations": [],
+    "reasoning": "Compliant: Specific, verifiable claim about the source of energy."
+  },
+  {
+    "id": "ELEC-002",
+    "text": "Groene stroom, hoe zit dat?  → Lees er hier alles over (https://www.vattenfall.nl/groene-stroom/)",
+    "isClaim": true,
+    "claimType": "Regular",
+    "topics": ["GreenElectricity"],
+    "expectedViolations": ["GreenElectricity"],
+    "reasoning": "Not compliant: not specific enough."
+  },
+  {
+    "id": "GAS-001",
+    "text": "Groen gas is een duurzamer alternatief voor aardgas. Het wordt gemaakt van natuurlijke grondstoffen. Denk aan mest, slib, groente- fruit- en tuinafval (gft). Tijdens een proces van vergisting, zetten bacteriën dit afval om tot biogas. Dit biogas wordt gezuiverd, gedroogd en bewerkt tot groen gas. Als je kiest voor groen gas, vervang je daarmee een deel van het aardgas in ons gasnet.  Als je kookt of verwarmt met groen gas, stoot je ook CO2 uit. Maar deze uitstoot is eerder door de gebruikte biogrondstoffen opgenomen uit de lucht. Als je alles bij elkaar optelt en kijkt naar de gehele keten, stoot je met groen gas minder CO2 uit dan met gewoon aardgas.  Groen gas is wel duurder dan aardgas. Je kunt bij ons kiezen tussen 100% PuurGroen Gas en MixGroen Gas. Dat is 10% groen gas, aangevuld met aardgas. → Meer informatie over Groen Gas (https://www.vattenfall.nl/groen-gas/)",
+    "isClaim": true,
+    "claimType": "Regular",
+    "topics": ["GreenGas"],
+    "expectedViolations": [],
+    "reasoning": "Compliant: Specifies the source (organic waste) and certification."
+  },
+  {
+    "id": "GAS-002",
+    "text": "NederlandsGroenGas. Kies voor NederlandsGroenGas (https://www.vattenfall.nl/grootzakelijk/groen-gas/nederlands-groen-gas/)",
+    "isClaim": true,
+    "claimType": "Regular",
+    "topics": ["GreenGas"],
+    "expectedViolations": ["GreenGas"],
+    "reasoning": "Violation: Claims 'green gas' without specifying the source or composition (e.g. biogas vs compensated gas)."
+  },
+  {
+    "id": "HEAT-001",
+    "text": "",
+    "isClaim": true,
+    "claimType": "Regular",
+    "topics": ["HeatAndCold"],
+    "expectedViolations": [],
+    "reasoning": "Compliant: Valid claim describing a specific method of sustainable heating."
+  },
+  {
+    "id": "HEAT-0010",
+    "text": "Koeling uit water: De koudenetten van Amsterdam haalden in 2024 85% van hun koude uit oppervlaktewater. Dat is een eindeloos hernieuwbare bron. Bekijk het warmte-etiket(https://www.vattenfall.nl/stadsverwarming/warmte-etiket/)",
+    "isClaim": true,
+    "claimType": "Regular",
+    "topics": ["HeatAndCold"],
+    "expectedViolations": [],
+    "reasoning": "Compliant"
+  },
+  {
+    "id": "HEAT-002",
+    "text": "",
+    "isClaim": true,
+    "claimType": "Comparison",
+    "topics": ["HeatAndCold", "SuperlativesStatement"],
+    "expectedViolations": ["Superlatives", "HeatAndCold"],
+    "reasoning": "Violation: Unsubstantiated superlative ('most sustainable') and vague claim about heat network sustainability."
+  },
+  {
+    "id": "PARIS-001",
+    "text": "",
+    "isClaim": true,
+    "claimType": "Ambition",
+    "topics": ["ParisClimateTargets"],
+    "expectedViolations": [],
+    "reasoning": "Compliant: Ambition with a clear target year and a specific baseline."
+  },
+  {
+    "id": "PARIS-002",
+    "text": "Onze weg naar Paris Proof. Wij zetten ons samen met onze klanten in voor een duurzame gebouwde omgeving (https://www.vattenfall.nl/grootzakelijk/sectoren/vastgoed/paris-proof/)",
+    "isClaim": true,
+    "claimType": "Ambition",
+    "topics": ["ParisClimateTargets"],
+    "expectedViolations": ["ParisClimateTargets", "Sustanciation"],
+    "reasoning": "Violation: Missing substanciation for paris climate targets. Too vague, not specific enough for average consumer.."
+  },
+  {
+    "id": "FOSSIL-001",
+    "text": "",
+    "isClaim": true,
+    "claimType": "Ambition",
+    "topics": ["FossilFreeLivingInOneGeneration"],
+    "expectedViolations": [],
+    "reasoning": "Compliant: The slogan is used in conjunction with a concrete, time-bound investment plan."
+  },
+  {
+    "id": "FOSSIL-002",
+    "text": "",
+    "isClaim": true,
+    "claimType": "Ambition",
+    "topics": ["FossilFreeLivingInOneGeneration"],
+    "expectedViolations": ["FossilFreeLivingInOneGeneration"],
+    "reasoning": "Violation: Vague ambition without a timeline or concrete plan."
+  },
+  {
+    "id": "COMP-001",
+    "text": "",
+    "isClaim": true,
+    "claimType": "Comparison",
+    "topics": ["ComparisonStatement", "HeatAndCold"],
+    "expectedViolations": [],
+    "reasoning": "Compliant: Comparison is specific (30% less), compares to a standard baseline, and cites a calculation standard."
+  },
+  {
+    "id": "COMP-002",
+    "text": "",
+    "isClaim": true,
+    "claimType": "Comparison",
+    "topics": ["GreenGas", "ComparisonStatement"],
+    "expectedViolations": ["Comparison"],
+    "reasoning": "Violation: Comparison is vague ('better') and does not specify by how much or based on what lifecycle analysis."
+  },
+  {
+    "id": "SUPER-002",
+    "text": "",
+    "isClaim": true,
+    "claimType": "Comparison",
+    "topics": ["SuperlativesStatement", "ComparisonStatement"],
+    "expectedViolations": ["Superlatives"],
+    "reasoning": "Violation: Uses absolute superlative 'most sustainable' without objective verification."
+  },
+  {
+    "id": "LABEL-001",
+    "text": "Het stroometiket: hier zie je waar je stroom vandaan komt. Het stroometiket laat zien met welke energiebronnen onze stroom in 2021 is opgewekt. Je ziet ook wat het aandeel is van elke energiebron die gebruikt is. Bij Vattenfall NL Consumenten & MKB wordt een steeds groter deel van de stroom duurzaam opgewekt, uit zon, wind en water. In 2021 zaten we al boven de 70%. Ons product Groen uit Nederland wordt 100% opgewekt uit duurzame energiebronnen. Bekijk ons stroometiket (https://www.vattenfall.nl/stroom/stroometiket/). In april 2023 publiceren we het stroometiket over 2022.",
+    "isClaim": true,
+    "claimType": "Regular",
+    "topics": ["EnergyLabel"],
+    "expectedViolations": [],
+    "reasoning": "Compliant: States a specific, recognized Energy Label class."
+  },
+  {
+    "id": "LABEL-002",
+    "text": "The power label: here you can see where your power comes from. By 2024, all our customers will receive 100% green electricity from the Netherlands at home and in SMEs. Check our electricity label (https://www.vattenfall.nl/stroom/stroometiket/) to see from which sources our electricity is generated.",
+    "isClaim": true,
+    "claimType": "Regular",
+    "topics": ["EnergyLabel"],
+    "expectedViolations": ["EnergyLabel"],
+    "reasoning": "Violation: No explanation of energy label."
+  }
+]

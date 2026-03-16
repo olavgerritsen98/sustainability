@@ -1,0 +1,47 @@
+parameters:
+  - name: azureSubscription
+    type: string
+    displayName: 'Azure Subscription'
+
+  - name: appName
+    type: string
+    displayName: 'Azure Function App Name'
+
+  - name: solutionPath
+    type: string
+    displayName: 'Solution Path'
+
+  - name: projectPath
+    type: string
+    displayName: 'Project Path'
+
+  - name: configuration
+    type: string
+    displayName: 'Build Configuration'
+    default: 'Release'
+
+  - name: outputPath
+    type: string
+    displayName: 'Publish Output Path'
+    default: './publish'
+
+steps:
+  - checkout: self
+    displayName: 'Checkout Code'
+
+  - script: dotnet restore ${{ parameters.solutionPath }}
+    displayName: 'Restore Dependencies'
+
+  - script: dotnet build ${{ parameters.projectPath }} --configuration ${{ parameters.configuration }}
+    displayName: 'Build Project'
+
+  - script: dotnet publish ${{ parameters.projectPath }} --configuration ${{ parameters.configuration }} --output ${{ parameters.outputPath }}
+    displayName: 'Publish Project'
+
+  - task: AzureFunctionApp@1
+    displayName: 'Deploy Azure Function App'
+    inputs:
+      azureSubscription: ${{ parameters.azureSubscription }}
+      appType: functionApp
+      appName: ${{ parameters.appName }}
+      package: '$(System.DefaultWorkingDirectory)/${{ parameters.outputPath }}'
