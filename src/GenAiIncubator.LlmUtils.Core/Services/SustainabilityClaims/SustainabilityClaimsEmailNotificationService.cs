@@ -1,3 +1,4 @@
+using System.Text.RegularExpressions;
 using GenAiIncubator.LlmUtils.Core.Options;
 using GenAiIncubator.LlmUtils.Core.Services.Email;
 using Microsoft.Extensions.Logging;
@@ -16,6 +17,16 @@ namespace GenAiIncubator.LlmUtils.Core.Services.SustainabilityClaims;
 public sealed class SustainabilityClaimsEmailNotificationService
 {
     private const long MaxAttachmentBytes = 3 * 1024 * 1024; // 3 MB — stays within Graph sendMail's ~4 MB total message limit
+
+    /// <summary>
+    /// Matches a standard email address embedded anywhere in a freetext string.
+    /// The owner columns from Optimizely look like:
+    ///   "Firstname Lastname (Team) user@example.com | Team Name"
+    /// so we need to extract the address rather than use the raw value.
+    /// </summary>
+    private static readonly Regex EmailRegex = new(
+        @"[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}",
+        RegexOptions.Compiled | RegexOptions.IgnoreCase);
 
     private readonly IEmailService _emailService;
     private readonly GraphOptions _options;
@@ -75,9 +86,11 @@ public sealed class SustainabilityClaimsEmailNotificationService
             return;
         }
 
-        // Only send email if at least one owner is present
+        // Extract valid email addresses from the freetext owner columns.
+        // The columns may contain display names and team info, e.g.:
+        //   "Lastname Firstname (CF-FB) user@example.com | Team Name"
         var recipients = new[] { row.AccountableForContents, row.ResponsibleForContents }
-            .Where(email => !string.IsNullOrWhiteSpace(email))
+            .SelectMany(ExtractEmails)
             .Distinct(StringComparer.OrdinalIgnoreCase)
             .ToArray();
 
@@ -104,6 +117,18 @@ public sealed class SustainabilityClaimsEmailNotificationService
     }
 
     /// <summary>
+    /// Extracts all valid email addresses found anywhere in <paramref name="value"/>.
+    /// Returns an empty sequence when <paramref name="value"/> is null or whitespace.
+    /// </summary>
+    internal static IEnumerable<string> ExtractEmails(string? value)
+    {
+        if (string.IsNullOrWhiteSpace(value))
+            return Enumerable.Empty<string>();
+
+        return EmailRegex.Matches(value).Select(m => m.Value);
+    }
+
+    /// <summary>
     /// Builds the Dutch email body for a non-compliant page with at least one known owner.
     /// Uses a simple HTML template with minimal styling.
     /// </summary>
@@ -122,7 +147,7 @@ public sealed class SustainabilityClaimsEmailNotificationService
     <p>Totaal aantal claims: {claimsFound}<br>
     Compliant: {claimsCompliant}<br>
     Niet compliant: {claimsNotCompliant}</p>
-    <p>In de bijlage vind je de details en op basis daarvan kan je aan de slag om de content compliant te maken. Als je het niet eens bent met de uitkomst van de AI-tool, breng je input dan mee naar het “inloopspreekuur duurzaamheidsclaims” om je case te bespreken.</p>
+    <p>In de bijlage vind je de details en op basis daarvan kan je aan de slag om de content compliant te maken. Als je het niet eens bent met de uitkomst van de AI-tool, breng je input dan mee naar het "inloopspreekuur duurzaamheidsclaims" om je case te bespreken.</p>
     <p>Als je de content hebt gewijzigd, kan je zelf de AI-tool gebruiken om te checken of de content nu wel compliant is. Klik op de volgende link om de AI-tool te openen: <a href='{aiToolUrl}'>{aiToolUrl}</a></p>
     <p>Veel succes!</p>
     <p style='color:#888;font-size:13px;'>PS Ben jij niet meer de accountable of responsible van deze webpagina, stuur deze mail dan door naar de juiste persoon EN wijzig dit ook in Optimizely.</p>
