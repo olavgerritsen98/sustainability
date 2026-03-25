@@ -1,3 +1,4 @@
+using System.Text.RegularExpressions;
 using GenAiIncubator.LlmUtils.Core.Options;
 using GenAiIncubator.LlmUtils.Core.Services.Email;
 using Microsoft.Extensions.Logging;
@@ -16,6 +17,11 @@ namespace GenAiIncubator.LlmUtils.Core.Services.SustainabilityClaims;
 public sealed class SustainabilityClaimsEmailNotificationService
 {
     private const long MaxAttachmentBytes = 3 * 1024 * 1024; // 3 MB — stays within Graph sendMail's ~4 MB total message limit
+
+    // Matches standard email addresses embedded anywhere in a string
+    private static readonly Regex EmailRegex = new(
+        @"[A-Z0-9._%+\-]+@[A-Z0-9.\-]+\.[A-Z]{2,}",
+        RegexOptions.Compiled | RegexOptions.IgnoreCase);
 
     private readonly IEmailService _emailService;
     private readonly GraphOptions _options;
@@ -48,8 +54,7 @@ public sealed class SustainabilityClaimsEmailNotificationService
         }
     }
 
-    // ─── private ────────────────────────────────────────────────────────────────
-
+    // ─── private ───────────────────────────────────────────────────────────────────────────
     private async Task ProcessRowAsync(
         SustainabilityClaimsEmailNotificationRow row,
         IReadOnlyDictionary<string, byte[]>? attachmentsByBlobPath,
@@ -75,16 +80,17 @@ public sealed class SustainabilityClaimsEmailNotificationService
             return;
         }
 
-        // Only send email if at least one owner is present
+        // Extract actual email addresses from owner fields, which may contain free-text like
+        // "Firstname Lastname (CF-FB) email@domain.com | Team"
         var recipients = new[] { row.AccountableForContents, row.ResponsibleForContents }
-            .Where(email => !string.IsNullOrWhiteSpace(email))
+            .SelectMany(ExtractEmails)
             .Distinct(StringComparer.OrdinalIgnoreCase)
             .ToArray();
 
         if (recipients.Length == 0)
         {
             _logger.LogWarning(
-                "Page {PageUrl} is not compliant but no accountable or responsible owner is present. No email sent.",
+                "Page {PageUrl} is not compliant but no accountable or responsible owner email could be extracted. No email sent.",
                 row.PageUrl);
             return;
         }
@@ -101,6 +107,20 @@ public sealed class SustainabilityClaimsEmailNotificationService
             BuildNonCompliantEmailBody(row),
             attachments,
             ct);
+    }
+
+    /// <summary>
+    /// Extracts all valid e-mail addresses embedded in a free-text owner field value.
+    /// Returns an empty sequence when <paramref name="value"/> is null or whitespace.
+    /// </summary>
+    internal static IEnumerable<string> ExtractEmails(string? value)
+    {
+        if (string.IsNullOrWhiteSpace(value))
+            return Enumerable.Empty<string>();
+
+        return EmailRegex.Matches(value)
+            .Select(m => m.Value.Trim())
+            .Where(v => !string.IsNullOrWhiteSpace(v));
     }
 
     /// <summary>
