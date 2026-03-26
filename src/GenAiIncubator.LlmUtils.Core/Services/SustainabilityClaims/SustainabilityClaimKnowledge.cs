@@ -35,7 +35,7 @@ public static class SustainabilityClaimKnowledge
             [RequirementCode.General_ClearAndUnambiguous] =
                 "The claim is clear and unambiguous; it is immediately clear to the average consumer what the claim means.",
             [RequirementCode.General_FactuallyCorrectWithSubstanciation] =
-                "The claim is factually correct and supported by sufficient, up-to-date, and accessible substanciation. Substanciation can be evidence or plans and measures, or other statements that support the claim, in a way where the reader could potentially verify.",
+                "The claim is factually correct and supported by sufficient, up-to-date, and accessible substanciation. Substanciation can be evidence or plans and measures, or other statements that support the claim, in a way where the reader could potentially verify. The substantiation must be specifically and directly relevant to the specific claim being made; a page that only describes a third-party supplier's general activities, without directly evidencing Vattenfall's claim, is not sufficient.",
             // [RequirementCode.General_NotMisleading] =
             //     "The claim is not misleading; A claim is misleading only if the omission results in a different or broader impression of sustainability benefit than what the claim actually covers. Describing what the company enables, supports, or offers (e.g., solutions that can help reduce emissions or costs) is not misleading, as long as no guaranteed outcome is stated.",
 
