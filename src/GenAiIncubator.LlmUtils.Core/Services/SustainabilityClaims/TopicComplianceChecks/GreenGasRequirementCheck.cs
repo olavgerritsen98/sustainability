@@ -329,14 +329,31 @@ public class GreenGasRequirementCheck(Kernel kernel, IWebContentNormalizationSer
 
     private async Task<TopicComplianceEvaluationResponse> RunGreenCompositionCheckAsync(SustainabilityClaim claim, string sourceContent, CancellationToken cancellationToken)
     {
-        TopicComplianceEvaluationResponse result = await kernel.ExecuteTopicSubCheckAsync(
+        // Claim-level first
+        TopicComplianceEvaluationResponse claimResult = await kernel.ExecuteTopicSubCheckAsync(
             SubCheckGreenComposition,
             GetGreenCompositionPrompt(claim, sourceContent),
             cancellationToken);
-        result.Reasoning = $"[{SubCheckGreenComposition}] " + result.Reasoning;
-        result.Warning = $"[{SubCheckGreenComposition}] " + result.Warning;
-        return result;
-    }
+        claimResult.Reasoning = $"[{SubCheckGreenComposition}] " + claimResult.Reasoning;
+        if (claimResult.IsCompliant) return claimResult;
+
+        // Page-level fallback
+        var pageResult = await kernel.ExecuteTopicSubCheckAsync(
+            "GreenCompositionPage",
+            GetGreenCompositionPagePrompt(claim, sourceContent),
+            cancellationToken);
+        if (pageResult.IsCompliant)
+        {
+            return new TopicComplianceEvaluationResponse
+            {
+                IsCompliant = true,
+                Reasoning = $"[GreenCompositionPage] Composition missing in claim but present in broader page context.",
+                Warning = $"[GreenCompositionPage] Composition missing in claim text.",
+                SuggestedAlternative = string.Empty
+            };
+        }
+        return claimResult;    
+            }
 
     private static string GetGreenCompositionPrompt(SustainabilityClaim claim, string sourceContent)
     {
@@ -368,5 +385,20 @@ public class GreenGasRequirementCheck(Kernel kernel, IWebContentNormalizationSer
         - Assess compliance with the green gas composition requirement.
         - Return TopicComplianceEvaluationResponse JSON. If non-compliant, suggest alternative by adding a brief explanation of composition (e.g. "Groen gas wordt gemaakt van organische reststromen...").
         """;
+    }
+    private static string GetGreenCompositionPagePrompt(SustainabilityClaim claim, string sourceContent)
+    {
+        return $"""
+        Check if the broader page context (sourceContent) contains an explanation of green gas composition (organic waste, biomass, manure, etc.).
+
+        [BEGIN CLAIM]
+        {claim.RelatedText}
+        [END CLAIM]
+
+        [BEGIN CONTEXT]
+        {sourceContent}
+        [END CONTEXT]
+        """;
+    }
     }
 }
