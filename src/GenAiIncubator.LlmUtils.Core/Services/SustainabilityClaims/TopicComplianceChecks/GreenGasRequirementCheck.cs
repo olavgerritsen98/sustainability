@@ -181,18 +181,6 @@ public class GreenGasRequirementCheck(Kernel kernel, IWebContentNormalizationSer
 
     private async Task<TopicComplianceEvaluationResponse> RunCertificationVertiCerCheckAsync(SustainabilityClaim claim, string sourceContent, CancellationToken cancellationToken)
     {
-        // If VertiCer URL present in related URLs, auto-compliant.
-        if (claim.RelatedUrls.Any(u => u.Contains("verticer", StringComparison.OrdinalIgnoreCase)))
-        {
-            return new TopicComplianceEvaluationResponse
-            {
-                IsCompliant = true,
-                Reasoning = $"[{SubCheckCertificationVertiCer}] VertiCer certification URL present in related URLs.",
-                Warning = string.Empty,
-                SuggestedAlternative = string.Empty
-            };
-        }
-
         TopicComplianceEvaluationResponse result = await kernel.ExecuteTopicSubCheckAsync(
             SubCheckCertificationVertiCer,
             GetCertificationVertiCerPrompt(claim, sourceContent),
