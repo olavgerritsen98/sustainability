@@ -499,6 +499,7 @@ public class SustainabilityClaimsSemanticService(Kernel kernel) : ISustainabilit
             - Consider presence of data, studies, third-party references, labels/certifications, or detailed explanations.
             - Substanciation can be evidence or plans and measures, or other statements that support the claim, in a way where the reader could potentially verify. Basically, it should be showing that the claim is backed up by something.
                 - For example, a sentence explaining that there is a contract between Vattenfall some company, and this is stated as supporting some claim, is substanciation.
+                        - IMPORTANT: The substantiation must be specifically relevant to the claim. A page that only describes a third-party supplier's general activities or services, without directly relating to or evidencing Vattenfall's specific claim, does NOT constitute valid substantiation. The content must actually back up what the claim states.
 
             Output JSON with fields:
             - ProvidesSubstanciation: boolean
@@ -556,6 +557,7 @@ public class SustainabilityClaimsSemanticService(Kernel kernel) : ISustainabilit
             - Look for more than one concrete examples of how the ambition will be achieved.
             - Consider presence of specific actions, timelines, methodologies, or detailed implementation plans.
             - Look for evidence that work has already begun (voorbeelden dat we al begonnen zijn).
+                    - IMPORTANT: The plans and measures must be Vattenfall's OWN concrete plans, not merely information about a third-party supplier. A page that only describes what a supplier (e.g. Renewi) does, without showing Vattenfall's own roadmap, commitments, or implementation steps, is NOT sufficient as a plan. The content must show how VATTENFALL will achieve the ambition, not just that a partner exists.
 
             Output JSON with fields:
             - ProvidesPlansAndMeasures: boolean

@@ -105,12 +105,18 @@ public class GreenElectricityRequirementCheck(Kernel kernel) : TopicSpecificRequ
 
     private async Task<TopicComplianceEvaluationResponse> RunBenefitScopeCheckAsync(SustainabilityClaim claim, string sourceContent, CancellationToken cancellationToken)
     {
-        return await kernel.ExecuteTopicSubCheckAsync(SubCheckBenefitScope, GetBenefitScopeRequirementCheckPrompt(claim, sourceContent), cancellationToken);
+                var result = await kernel.ExecuteTopicSubCheckAsync(SubCheckBenefitScope, GetBenefitScopeRequirementCheckPrompt(claim, sourceContent), cancellationToken);
+        result.Reasoning = $"[{SubCheckBenefitScope}] " + result.Reasoning;
+        result.Warning = string.IsNullOrWhiteSpace(result.Warning) ? string.Empty : $"[{SubCheckBenefitScope}] " + result.Warning;
+        return result;
     }
 
     private async Task<TopicComplianceEvaluationResponse> RunMixedElectricityCheckAsync(SustainabilityClaim claim, string sourceContent, CancellationToken cancellationToken)
     {
-        return await kernel.ExecuteTopicSubCheckAsync(SubCheckMixedElectricity, GetMixedElectricityRequirementCheckPrompt(claim, sourceContent), cancellationToken);
+                var result = await kernel.ExecuteTopicSubCheckAsync(SubCheckMixedElectricity, GetMixedElectricityRequirementCheckPrompt(claim, sourceContent), cancellationToken);
+        result.Reasoning = $"[{SubCheckMixedElectricity}] " + result.Reasoning;
+        result.Warning = string.IsNullOrWhiteSpace(result.Warning) ? string.Empty : $"[{SubCheckMixedElectricity}] " + result.Warning;
+        return result;
     }
 
     private static string GetGroenUitNlProductPrompt(SustainabilityClaim claim)
@@ -122,6 +128,8 @@ public class GreenElectricityRequirementCheck(Kernel kernel) : TopicSpecificRequ
         If no mention of "Groen uit Nederland", no violation.
         Whenever Groen uit Nederland is mentioned, it must be clear this refers to a product. 
         The word “product” is preferred, but clear context (buying/subscribing) is acceptable.
+                IMPORTANT: The acceptable example below uses 'vermeld als' which implies it IS a named product/tariff, which is sufficient. However, if 'Groen uit Nederland' is used as if it is simply a description (e.g., 'our electricity comes from the Netherlands and is green'), that is non-compliant. The product nature must be inferable from context (ordering, subscribing, named tariff).
+                        If "Groen uit Nederland" is used as a geographic or origin description (not as a capitalized product name), this check does not apply. Only flag when the capitalized product name "Groen uit Nederland" is mentioned without clear product context (the word "product" or clear buying/subscribing context).
         
         Example: "Zakelijk FlexPrijsStroom is vermeld als ‘Groen uit Nederland’. Bekijk ons stroometiket." is acceptable.
         
@@ -255,6 +263,8 @@ public class GreenElectricityRequirementCheck(Kernel kernel) : TopicSpecificRequ
         return $"""
         [Instructions]
         Requirement: Clarify whether the sustainability benefit applies to the whole company or just a part (e.g. the specific e-boiler product).
+                A claim is non-compliant if it implies a broad sustainability benefit (e.g., "all electricity is green", "our electricity is fossil-free") without making clear this only applies to the specific product or tariff being sold. For example, saying 'GroenUitNL electricity' is green implies the entire electricity supply is green, which is misleading unless explicitly scoped to only the specific GroenUitNL product/tariff. The claim should specify that the sustainability applies to the specific product chosen, not to all electricity.
+                        Non-compliant examples: "Met GroenUitNL krijg je groene stroom" (implies all electricity is green without scoping to the product).
         
         [GENERAL COMPLIANCE RULES]
         {SharedPromptConstants.CopyHandboekRules}
@@ -262,6 +272,7 @@ public class GreenElectricityRequirementCheck(Kernel kernel) : TopicSpecificRequ
         [STRICT GUARDRAIL]
         This check is strictly about the "Scope" of the claim.
         If the claim is General (Type A), do NOT suggest adding a stroometiket link. Focus only on clarifying that the benefit applies to the specific process/product mentioned.
+                If the claim already contains an explicit scope limiter (e.g. a named organizational unit like "thuis en mkb", "Consumenten", a specific product name, or a customer segment), the scope requirement is satisfied. Only flag when the claim reads as a company-wide absolute with no qualifier at all.
 
         [BEGIN CLAIM TO EVALUATE]
         {claim.RelatedText}
