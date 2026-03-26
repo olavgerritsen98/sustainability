@@ -65,6 +65,11 @@ public class FossilFreeLivingRequirementCheck(Kernel kernel) : TopicSpecificRequ
             2. Tone and phrasing (FFL-5)
             • Tone must be forward-looking and transparent (use “ambition,” “goal,” “working toward”).
             • Avoid exaggeration or superiority: no “already fossil-free” or “more fossil-free than others.”
+            
+        3. Concrete evidence for progress claims (FFL-3)
+        • If the claim implies that progress toward fossil-free living is being made NOW (not just as a long-term vision), it must reference a concrete Vattenfall Action Plan or Roadmap.
+        • General references to external pacts or agreements are not sufficient.
+        • Mark as non-compliant if progress is claimed without linking to a Vattenfall-specific roadmap/plan.
             [END REQUIREMENTS]
 
             [CLAIM TO EVALUATE]
