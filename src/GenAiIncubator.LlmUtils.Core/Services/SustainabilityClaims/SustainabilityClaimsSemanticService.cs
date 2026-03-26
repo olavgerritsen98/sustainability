@@ -499,6 +499,7 @@ public class SustainabilityClaimsSemanticService(Kernel kernel) : ISustainabilit
             - Consider presence of data, studies, third-party references, labels/certifications, or detailed explanations.
             - Substanciation can be evidence or plans and measures, or other statements that support the claim, in a way where the reader could potentially verify. Basically, it should be showing that the claim is backed up by something.
                 - For example, a sentence explaining that there is a contract between Vattenfall some company, and this is stated as supporting some claim, is substanciation.
+                        - IMPORTANT: The substantiation must be specifically relevant to the claim. A page that only describes a third-party supplier's general activities or services, without directly relating to or evidencing Vattenfall's specific claim, does NOT constitute valid substantiation. The content must actually back up what the claim states.
 
             Output JSON with fields:
             - ProvidesSubstanciation: boolean
