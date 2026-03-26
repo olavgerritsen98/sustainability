@@ -556,6 +556,7 @@ public class SustainabilityClaimsSemanticService(Kernel kernel) : ISustainabilit
             - Look for more than one concrete examples of how the ambition will be achieved.
             - Consider presence of specific actions, timelines, methodologies, or detailed implementation plans.
             - Look for evidence that work has already begun (voorbeelden dat we al begonnen zijn).
+                    - IMPORTANT: The plans and measures must be Vattenfall's OWN concrete plans, not merely information about a third-party supplier. A page that only describes what a supplier (e.g. Renewi) does, without showing Vattenfall's own roadmap, commitments, or implementation steps, is NOT sufficient as a plan. The content must show how VATTENFALL will achieve the ambition, not just that a partner exists.
 
             Output JSON with fields:
             - ProvidesPlansAndMeasures: boolean
