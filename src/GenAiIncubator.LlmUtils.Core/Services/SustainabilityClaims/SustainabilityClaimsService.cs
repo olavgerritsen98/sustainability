@@ -90,6 +90,11 @@ public class SustainabilityClaimsService(
             }
         }
 
+        // Deduplicate claims with identical text to prevent the same claim from being reported twice
+        claims = claims
+            .GroupBy(c => c.ClaimText.Trim(), StringComparer.OrdinalIgnoreCase)
+            .Select(g => g.First())
+            .ToList();
         // 3. Evaluate each claim for compliance
         var evaluationsBag = new ConcurrentBag<SustainabilityClaimComplianceEvaluation>();
         var step3ParallelOptions = new ParallelOptions
