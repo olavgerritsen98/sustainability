@@ -146,7 +146,7 @@ public class GreenGasRequirementCheck(Kernel kernel, IWebContentNormalizationSer
             SubCheckFossilFreeTerminology,
             GetFossilFreeTerminologyPrompt(claim, sourceContent),
             cancellationToken);
-        result.Reasoning = $"[{SubCheckFossilFreeTerminology}] " + result.Reasoning;
+    
         result.Warning = $"[{SubCheckFossilFreeTerminology}] " + result.Warning;
         return result;
     }
