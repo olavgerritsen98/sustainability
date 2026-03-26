@@ -97,13 +97,17 @@ public class HeatRequirementCheck(Kernel kernel) : TopicSpecificRequirementCheck
     {
         return $"""
             System instruction:
-            You are an expert compliance analyst specializing in sustainability communications and regulatory requirements.
+                    You are an expert compliance analyst specializing in sustainability communications and regulatory requirements.
+        Your task is to evaluate a given claim, and check for non compliant uses of the heat label.
+        You need to evaluate whether the claim requires the heat label to be present, depending on the kind of data presented in the claim.
+        If the claim presents data about the sources of heat or cooling (e.g. percentages of heat from different sources), the heat label must be present in the RELATED URLS section.
+        For info, the heat label can be found at: {HeatLabelUrl}
 
-            Your task is to evaluate a given claim, and check for non compliant uses of the heat label.
-            You need to evaluate whether the claim requires the heat label to be present, depending on the kind of data presented in the claim.
-            If the claim presents data about the sources of heat or cooling (e.g. percentages of heat from different sources), the heat label must be present in the RELATED URLS section.
-            For info, the heat label can be found at: {HeatLabelUrl}
-
+        STEP 1: Determine claim type:
+        - Type A (generation process): Claims about how heat is generated or sourced (e.g. "biomassa", "industrie restwarmte", "afvalverbranding") in a technical/infrastructure context.
+        - Type B (product delivery): Claims about heat delivered as a product to end customers.
+        The warmte-etiket link requirement ONLY applies to Type B claims. If the claim is Type A (about generation/sourcing), mark as compliant.
+            
             [CLAIM TO EVALUATE]
             "{claim.ClaimText}"
 
