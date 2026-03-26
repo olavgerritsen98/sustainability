@@ -122,6 +122,7 @@ public class GreenElectricityRequirementCheck(Kernel kernel) : TopicSpecificRequ
         If no mention of "Groen uit Nederland", no violation.
         Whenever Groen uit Nederland is mentioned, it must be clear this refers to a product. 
         The word “product” is preferred, but clear context (buying/subscribing) is acceptable.
+                IMPORTANT: The acceptable example below uses 'vermeld als' which implies it IS a named product/tariff, which is sufficient. However, if 'Groen uit Nederland' is used as if it is simply a description (e.g., 'our electricity comes from the Netherlands and is green'), that is non-compliant. The product nature must be inferable from context (ordering, subscribing, named tariff).
         
         Example: "Zakelijk FlexPrijsStroom is vermeld als ‘Groen uit Nederland’. Bekijk ons stroometiket." is acceptable.
         
@@ -255,6 +256,8 @@ public class GreenElectricityRequirementCheck(Kernel kernel) : TopicSpecificRequ
         return $"""
         [Instructions]
         Requirement: Clarify whether the sustainability benefit applies to the whole company or just a part (e.g. the specific e-boiler product).
+                A claim is non-compliant if it implies a broad sustainability benefit (e.g., "all electricity is green", "our electricity is fossil-free") without making clear this only applies to the specific product or tariff being sold. For example, saying 'GroenUitNL electricity' is green implies the entire electricity supply is green, which is misleading unless explicitly scoped to only the specific GroenUitNL product/tariff. The claim should specify that the sustainability applies to the specific product chosen, not to all electricity.
+                        Non-compliant examples: "Met GroenUitNL krijg je groene stroom" (implies all electricity is green without scoping to the product).
         
         [GENERAL COMPLIANCE RULES]
         {SharedPromptConstants.CopyHandboekRules}
