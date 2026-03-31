@@ -6,6 +6,7 @@ using GenAiIncubator.LlmUtils.Core.Helpers;
 using GenAiIncubator.LlmUtils.Core.Models.SustainabilityClaims;
 using GenAiIncubator.LlmUtils.Core.Services.SustainabilityClaims.SemanticModels;
 using Microsoft.SemanticKernel;
+using GenAiIncubator.LlmUtils_Functions.Definitions.SustainabilityClaimsBatchChecks;
 
 namespace GenAiIncubator.LlmUtils.Core.Services.SustainabilityClaims;
 
@@ -180,10 +181,9 @@ public class SustainabilityClaimsSemanticService(Kernel kernel) : ISustainabilit
             : string.Join(Environment.NewLine, relatedUrls.Select(u => $"- {u}"));
 
         return $"""
-            System instruction:
-            You are an expert compliance analyst specializing in sustainability communications and regulatory requirements. Evaluate whether a sustainability claim meets the required compliance standards.
+{EuGreenClaimsGuidelines.ValidationPrompt}
 
-            Claim to evaluate:
+        Claim to evaluate:
             "{claim.ClaimText}"
             
             Additional context (may be empty):
